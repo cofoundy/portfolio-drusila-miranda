@@ -1,0 +1,40 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="metodo" class="py-20 md:py-28 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="mb-14 reveal">
+      <p class="text-[var(--color-accent)] text-xs tracking-widest uppercase mb-3 font-semibold" data-lang data-it="Il Mio Metodo" data-es="Mi Método">Il Mio Metodo</p>
+      <div class="w-12 h-0.5 bar-shimmer rounded-full"></div>
+    </div>
+
+    <!-- Steps -->
+    <div class="relative">
+      <!-- Vertical gold line (desktop) -->
+      <div class="hidden md:block absolute left-[39px] top-4 bottom-4 w-px bg-gradient-to-b from-[var(--color-accent)] via-[var(--color-primary-light)] to-[var(--color-accent)]/20"></div>
+
+      <div class="space-y-10 md:space-y-12">
+        {siteConfig.method.map((step, i) => (
+          <div class={`reveal stagger-${i + 1} flex gap-6 md:gap-10 items-start`}>
+            <!-- Number circle -->
+            <div class="shrink-0 w-20 h-20 rounded-full border-2 border-[var(--color-accent)] flex items-center justify-center bg-white relative z-10">
+              <span class="font-['Playfair_Display',serif] text-2xl font-bold text-[var(--color-accent)]">{step.number}</span>
+            </div>
+
+            <!-- Content -->
+            <div class="pt-4">
+              <h3 class="font-['Playfair_Display',serif] text-xl md:text-2xl font-bold text-[var(--color-primary-dark)] mb-2" data-lang data-it={step.title.it} data-es={step.title.es}>
+                {step.title.it}
+              </h3>
+              <p class="text-sm md:text-base text-[var(--color-primary)] leading-relaxed max-w-lg" data-lang data-it={step.description.it} data-es={step.description.es}>
+                {step.description.it}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

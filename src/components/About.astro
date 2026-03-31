@@ -1,0 +1,32 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="chi-sono" class="py-20 md:py-28 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-10 md:gap-16 items-start">
+      <!-- Title column -->
+      <div class="reveal-left">
+        <p class="text-[var(--color-accent)] text-xs tracking-widest uppercase mb-3 font-semibold" data-lang data-it="Chi Sono" data-es="Sobre Mí">Chi Sono</p>
+        <div class="w-12 h-0.5 bar-shimmer rounded-full"></div>
+      </div>
+
+      <!-- Bio column -->
+      <div class="md:col-span-1 reveal stagger-1">
+        <p class="text-[var(--color-primary-dark)]/80 leading-relaxed text-base" data-lang data-it={siteConfig.about.it} data-es={siteConfig.about.es}>
+          {siteConfig.about.it}
+        </p>
+      </div>
+
+      <!-- Quote column -->
+      <div class="reveal-right stagger-2">
+        <blockquote class="quote-float border-l-2 border-[var(--color-accent)] pl-5">
+          <p class="font-['Playfair_Display',serif] italic text-lg text-[var(--color-primary)] leading-relaxed" data-lang data-it={siteConfig.quote.it} data-es={siteConfig.quote.es}>
+            "{siteConfig.quote.it}"
+          </p>
+          <cite class="block mt-3 text-sm text-[var(--color-primary-light)] not-italic">— {siteConfig.name}</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>

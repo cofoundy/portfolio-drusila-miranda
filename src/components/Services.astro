@@ -1,0 +1,45 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="servizi" class="py-20 md:py-28 bg-[var(--color-surface)]">
+  <div class="max-w-5xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="mb-14 reveal">
+      <p class="text-[var(--color-accent)] text-xs tracking-widest uppercase mb-3 font-semibold" data-lang data-it="Servizi" data-es="Servicios">Servizi</p>
+      <div class="w-12 h-0.5 bar-shimmer rounded-full"></div>
+    </div>
+
+    <!-- Service cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {siteConfig.services.map((service, i) => (
+        <div class={`group reveal stagger-${i + 1} card-hover bg-white rounded-xl p-8 border border-[var(--color-surface)] hover:border-[var(--color-accent)]`}>
+          <!-- Number -->
+          <span class="block font-['Playfair_Display',serif] text-4xl font-bold text-[var(--color-accent)]/20 mb-4 group-hover:text-[var(--color-accent)]/40 transition-colors">
+            {service.number}
+          </span>
+
+          <!-- Title -->
+          <h3 class="font-['Playfair_Display',serif] text-xl font-bold text-[var(--color-primary-dark)] mb-3" data-lang data-it={service.title.it} data-es={service.title.es}>
+            {service.title.it}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-sm text-[var(--color-primary)] leading-relaxed mb-5" data-lang data-it={service.description.it} data-es={service.description.es}>
+            {service.description.it}
+          </p>
+
+          <!-- Items -->
+          <ul class="space-y-2">
+            {service.items.it.map((item: string, j: number) => (
+              <li class="flex items-center gap-2 text-sm text-[var(--color-primary-dark)]/70">
+                <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0"></span>
+                <span data-lang data-it={service.items.it[j]} data-es={service.items.es[j]}>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,113 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="hero" class="min-h-screen flex items-center bg-[var(--color-surface-light)] relative overflow-hidden">
+  <!-- Subtle gold gradient accent -->
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[var(--color-surface)] to-transparent opacity-60 pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 py-20 md:py-0 w-full">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <!-- Text column -->
+      <div class="order-2 md:order-1">
+        <!-- Inline lang toggle for mobile (before scroll) -->
+        <div class="mb-8 md:mb-10">
+          <button id="hero-lang-toggle" class="flex items-center gap-1 text-xs font-semibold border border-[var(--color-primary-light)]/40 rounded-full px-4 py-1.5 hover:border-[var(--color-accent)] transition-colors hero-cta">
+            <span class="hero-lang-it text-[var(--color-accent)]">IT</span>
+            <span class="text-[var(--color-primary-light)]">/</span>
+            <span class="hero-lang-es text-[var(--color-primary)]">ES</span>
+          </button>
+        </div>
+
+        <p class="text-[var(--color-primary)] text-sm tracking-widest uppercase mb-3 hero-subtitle">Creative Strategist & UGC Creator</p>
+
+        <h1 class="font-['Playfair_Display',serif] text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--color-primary-dark)] leading-tight mb-6 hero-title">
+          Drusila<br/>Miranda
+        </h1>
+
+        <p class="font-['Playfair_Display',serif] italic text-lg md:text-xl text-[var(--color-primary)] mb-8 hero-tagline" data-lang data-it={siteConfig.tagline.it} data-es={siteConfig.tagline.es}>
+          {siteConfig.tagline.it}
+        </p>
+
+        <a
+          href="#contatto"
+          class="inline-flex items-center gap-2 bg-[var(--color-primary-dark)] text-[var(--color-surface-light)] px-8 py-3.5 rounded-full text-sm font-medium tracking-wide btn-hover hero-cta hover:bg-[var(--color-accent)] transition-colors"
+        >
+          <span data-lang data-it="Parliamo" data-es="Hablemos">Parliamo</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+
+        <!-- Social row -->
+        <div class="flex items-center gap-4 mt-8 hero-cta">
+          {siteConfig.social.instagram && (
+            <a href={siteConfig.social.instagram} target="_blank" rel="noopener" class="text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          )}
+          {siteConfig.social.tiktok && (
+            <a href={siteConfig.social.tiktok} target="_blank" rel="noopener" class="text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors" aria-label="TikTok">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13a8.28 8.28 0 005.58 2.16v-3.45a4.85 4.85 0 01-2.65-.78l.01.01v-4.25h2.64z"/></svg>
+            </a>
+          )}
+          {siteConfig.social.email && (
+            <a href={`mailto:${siteConfig.social.email}`} class="text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors" aria-label="Email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </a>
+          )}
+        </div>
+      </div>
+
+      <!-- Photo column -->
+      <div class="order-1 md:order-2 flex justify-center">
+        <div class="relative hero-photo">
+          <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden photo-ring">
+            <img
+              src="/profile.png"
+              alt={siteConfig.name}
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+          <!-- Decorative gold dot -->
+          <div class="absolute -bottom-2 -right-2 w-6 h-6 rounded-full bg-[var(--color-accent)]"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Hero language toggle (syncs with nav toggle)
+  const heroToggle = document.getElementById('hero-lang-toggle');
+  let heroLang: 'it' | 'es' = 'it';
+
+  heroToggle?.addEventListener('click', () => {
+    // Trigger the nav toggle if it exists
+    const navToggle = document.getElementById('lang-toggle');
+    if (navToggle) {
+      navToggle.click();
+    } else {
+      // Fallback: toggle language directly
+      document.body.classList.add('lang-switching');
+      setTimeout(() => {
+        heroLang = heroLang === 'it' ? 'es' : 'it';
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          const itText = el.getAttribute('data-it');
+          const esText = el.getAttribute('data-es');
+          if (itText && esText) {
+            el.textContent = heroLang === 'it' ? itText : esText;
+          }
+        });
+        document.documentElement.lang = heroLang;
+        document.body.classList.remove('lang-switching');
+      }, 200);
+    }
+
+    // Update hero toggle labels
+    const itLabel = heroToggle?.querySelector('.hero-lang-it');
+    const esLabel = heroToggle?.querySelector('.hero-lang-es');
+    const newLang = heroLang === 'it' ? 'es' : 'it';
+    if (itLabel) itLabel.className = `hero-lang-it ${newLang === 'it' ? 'text-[var(--color-accent)]' : 'text-[var(--color-primary)]'}`;
+    if (esLabel) esLabel.className = `hero-lang-es ${newLang === 'es' ? 'text-[var(--color-accent)]' : 'text-[var(--color-primary)]'}`;
+  });
+</script>
