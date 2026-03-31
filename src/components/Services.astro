@@ -1,22 +1,13 @@
 ---
 import { siteConfig } from "../config";
-
-const serviceIcons = [
-  // Strategia Creativa - lightbulb/strategy
-  `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>`,
-  // UGC Content - camera/content
-  `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"/></svg>`,
-  // Meta Ads - chart/performance
-  `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>`,
-];
 ---
 
 <section id="servizi" class="py-20 md:py-28 bg-[var(--color-surface)] relative">
-  <!-- Decorative dots pattern -->
+  <!-- Decorative dots -->
   <div class="absolute top-0 right-0 w-32 h-32 opacity-[0.04]" style="background-image: radial-gradient(circle, var(--color-primary-dark) 1px, transparent 1px); background-size: 16px 16px;"></div>
   <div class="absolute bottom-0 left-0 w-48 h-48 opacity-[0.04]" style="background-image: radial-gradient(circle, var(--color-primary-dark) 1px, transparent 1px); background-size: 16px 16px;"></div>
 
-  <div class="max-w-5xl mx-auto px-6">
+  <div class="max-w-6xl mx-auto px-6">
     <!-- Section header -->
     <div class="text-center mb-14 reveal">
       <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" data-lang data-it="Cosa Posso Fare Per Te" data-es="Qué Puedo Hacer Por Ti">Cosa Posso Fare Per Te</p>
@@ -24,40 +15,57 @@ const serviceIcons = [
       <div class="w-16 h-0.5 bar-shimmer rounded-full mx-auto mt-4"></div>
     </div>
 
-    <!-- Service cards -->
-    <div class="grid md:grid-cols-3 gap-6">
+    <!-- 6 service cards: 2x3 grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {siteConfig.services.map((service, i) => (
-        <div class={`group reveal stagger-${i + 1} card-hover relative bg-white rounded-2xl p-8 border border-[var(--color-primary-light)]/20 hover:border-[var(--color-accent)]/50 overflow-hidden`}>
-          <!-- Top accent bar -->
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-accent)]/0 via-[var(--color-accent)] to-[var(--color-accent)]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class={`group reveal stagger-${Math.min(i + 1, 6)} card-hover relative bg-white rounded-2xl p-7 border ${(service as any).highlight ? 'border-[var(--color-accent)]/30' : (service as any).premium ? 'border-[var(--color-accent)]' : 'border-[var(--color-primary-light)]/15'} hover:border-[var(--color-accent)]/50 overflow-hidden`}>
 
-          <!-- Icon + Number row -->
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl bg-[var(--color-surface)] flex items-center justify-center text-[var(--color-accent)] group-hover:bg-[var(--color-accent)] group-hover:text-white transition-colors duration-300">
-              <Fragment set:html={serviceIcons[i]} />
-            </div>
-            <span class="font-['Playfair_Display',serif] text-5xl font-bold text-[var(--color-surface)] group-hover:text-[var(--color-accent)]/10 transition-colors duration-300">{service.number}</span>
+          {/* Top accent bar */}
+          <div class={`absolute top-0 left-0 right-0 h-1 ${(service as any).premium ? 'bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-primary-light)] to-[var(--color-accent)]' : 'bg-gradient-to-r from-[var(--color-accent)]/0 via-[var(--color-accent)] to-[var(--color-accent)]/0 opacity-0 group-hover:opacity-100'} transition-opacity duration-500`}></div>
+
+          {/* Badges */}
+          <div class="flex items-center gap-2 mb-4">
+            {(service as any).highlight && (
+              <span class="text-[9px] tracking-[0.15em] uppercase font-bold bg-[var(--color-accent)]/10 text-[var(--color-accent)] px-2.5 py-1 rounded-full" data-lang data-it="Differenziatore" data-es="Diferenciador">Differenziatore</span>
+            )}
+            {(service as any).premium && (
+              <span class="text-[9px] tracking-[0.15em] uppercase font-bold bg-[var(--color-primary-dark)] text-[var(--color-accent)] px-2.5 py-1 rounded-full">Premium</span>
+            )}
           </div>
 
-          <!-- Title -->
-          <h3 class="font-['Playfair_Display',serif] text-xl font-bold text-[var(--color-primary-dark)] mb-3" data-lang data-it={service.title.it} data-es={service.title.es}>
+          {/* Number + Emoji */}
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-lg">{(service as any).emoji}</span>
+            <span class="font-['Playfair_Display',serif] text-4xl font-bold text-[var(--color-surface)] group-hover:text-[var(--color-accent)]/10 transition-colors duration-300">{service.number}</span>
+          </div>
+
+          {/* Title */}
+          <h3 class="font-['Playfair_Display',serif] text-lg font-bold text-[var(--color-primary-dark)] mb-2 leading-tight" data-lang data-it={service.title.it} data-es={service.title.es}>
             {service.title.it}
           </h3>
 
-          <!-- Description -->
-          <p class="text-sm text-[var(--color-primary)] leading-relaxed mb-6" data-lang data-it={service.description.it} data-es={service.description.es}>
+          {/* Description */}
+          <p class="text-sm text-[var(--color-primary)] leading-relaxed mb-4" data-lang data-it={service.description.it} data-es={service.description.es}>
             {service.description.it}
           </p>
 
-          <!-- Items with gold dots -->
-          <ul class="space-y-2.5 border-t border-[var(--color-surface)] pt-5">
+          {/* Items */}
+          <ul class="space-y-1.5 mb-4">
             {service.items.it.map((item: string, j: number) => (
-              <li class="flex items-center gap-3 text-sm text-[var(--color-primary-dark)]/70">
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0"></span>
+              <li class="flex items-center gap-2 text-xs text-[var(--color-primary-dark)]/70">
+                <span class="w-1 h-1 rounded-full bg-[var(--color-accent)] shrink-0"></span>
                 <span data-lang data-it={service.items.it[j]} data-es={service.items.es[j]}>{item}</span>
               </li>
             ))}
           </ul>
+
+          {/* Duration badge */}
+          <div class="pt-3 border-t border-[var(--color-surface)]">
+            <span class="inline-flex items-center gap-1.5 text-[10px] tracking-[0.1em] uppercase text-[var(--color-primary)] font-medium">
+              <svg class="w-3 h-3 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span data-lang data-it={service.duration.it} data-es={service.duration.es}>{service.duration.it}</span>
+            </span>
+          </div>
         </div>
       ))}
     </div>

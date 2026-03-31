@@ -1,18 +1,15 @@
-// Bilingual content type
 type BilingualText = { it: string; es: string };
 
 export const siteConfig = {
   name: "Drusila Miranda",
-  title: "Creative Strategist & UGC Creator",
+  title: "Creative Marketing Strategist & Meta Ads Specialist",
   defaultLang: "it" as "it" | "es",
 
-  // SEO
   description: {
-    it: "Drusila Miranda — Strategia creativa, UGC e Meta Ads per far crescere il tuo brand in Italia e America Latina.",
-    es: "Drusila Miranda — Estrategia creativa, UGC y Meta Ads para hacer crecer tu marca en Italia y Latinoamérica.",
+    it: "Drusila Miranda — Strategia creativa, contenuti e Meta Ads per trasformare attenzione in conversazioni e vendite.",
+    es: "Drusila Miranda — Estrategia creativa, contenido y Meta Ads para convertir atención en conversaciones y ventas.",
   } as BilingualText,
 
-  // 6-color luxury palette: warm monochromatico (negro → bronze → gold → beige → marfil)
   accentColor: "#D4A853",
   colors: {
     primaryDark: "#1A1A1A",
@@ -23,133 +20,174 @@ export const siteConfig = {
     surfaceLight: "#FAF7F2",
   },
 
-  // Hero
   tagline: {
-    it: "Strategia e creatività per far crescere il tuo brand.",
-    es: "Estrategia y creatividad para hacer crecer tu marca.",
+    it: "Creo sistemi di contenuto e advertising che trasformano attenzione in conversazioni e vendite.",
+    es: "Creo sistemas de contenido y publicidad que convierten atención en conversaciones y ventas.",
   } as BilingualText,
 
-  // About / Chi Sono
+  // Positioning statement
+  positioning: {
+    it: "Lavoro con strategia, creatività e test per identificare i messaggi che generano risultati reali.",
+    es: "Trabajo con estrategia, creatividad y test para encontrar lo que realmente convierte.",
+  } as BilingualText,
+
   about: {
-    it: "Sono una creative strategist e content creator peruviana che vive in Italia. Unisco la creatività latina con la raffinatezza europea per creare strategie di comunicazione che connettono brand e persone. Creo contenuti autentici, gestisco campagne Meta Ads e sviluppo strategie creative per aziende che vogliono crescere nei mercati italiano e latinoamericano.",
-    es: "Soy una estratega creativa y creadora de contenido peruana que vive en Italia. Combino la creatividad latina con la sofisticación europea para crear estrategias de comunicación que conectan marcas con personas. Creo contenido auténtico, gestiono campañas de Meta Ads y desarrollo estrategias creativas para empresas que quieren crecer en los mercados italiano y latinoamericano.",
+    it: "Sono una creative marketing strategist peruviana basata in Italia. Unisco la creatività latina con la mentalità strategica europea per creare sistemi che generano risultati reali. Non creo contenuti per pubblicare — creo contenuti per convertire.",
+    es: "Soy una creative marketing strategist peruana basada en Italia. Combino la creatividad latina con la mentalidad estratégica europea para crear sistemas que generan resultados reales. No creo contenido por publicar — creo contenido para convertir.",
   } as BilingualText,
 
   quote: {
-    it: "Due culture, una visione: far brillare il tuo brand.",
-    es: "Dos culturas, una visión: hacer brillar tu marca.",
+    it: "Non creo contenuti per pubblicare. Creo contenuti per convertire.",
+    es: "No creo contenido por publicar. Creo contenido para convertir.",
   } as BilingualText,
 
-  // Services (3)
+  // 6 services from client brief
   services: [
     {
       number: "01",
-      title: {
-        it: "Strategia Creativa",
-        es: "Estrategia Creativa",
-      } as BilingualText,
+      emoji: "🎯",
+      title: { it: "Strategia Creativa", es: "Estrategia Creativa" } as BilingualText,
       description: {
-        it: "Analizzo il tuo brand, il mercato e il pubblico per creare una strategia di comunicazione su misura che ti differenzi.",
-        es: "Analizo tu marca, el mercado y la audiencia para crear una estrategia de comunicación a medida que te diferencie.",
+        it: "Definisco la base del marketing del brand: angoli, messaggi e direzione strategica.",
+        es: "Defino la base estratégica del negocio.",
       } as BilingualText,
       items: {
-        it: ["Brand audit", "Piano editoriale", "Posizionamento", "Tone of voice"],
-        es: ["Auditoría de marca", "Plan editorial", "Posicionamiento", "Tono de voz"],
+        it: ["Analisi brand", "Studio audience", "Identificazione desiderio", "Angolo strategico"],
+        es: ["Análisis de marca", "Audiencia", "Deseo", "Ángulo estratégico"],
+      },
+      duration: { it: "3–5 giorni", es: "3–5 días" } as BilingualText,
+      deliverables: {
+        it: ["Documento strategico", "Direzione contenuti"],
+        es: ["Documento estratégico", "Dirección de contenidos"],
       },
     },
     {
       number: "02",
-      title: {
-        it: "UGC Content",
-        es: "Contenido UGC",
-      } as BilingualText,
+      emoji: "📱",
+      title: { it: "Sistema di Contenuti (30 giorni)", es: "Sistema de Contenidos (30 días)" } as BilingualText,
       description: {
-        it: "Creo contenuti autentici che parlano al tuo pubblico. Video, foto e storie che generano fiducia e conversioni.",
-        es: "Creo contenido auténtico que habla a tu público. Videos, fotos e historias que generan confianza y conversiones.",
+        it: "Creo contenuti pensati per convertire, non per pubblicare.",
+        es: "Creo contenido para convertir, no para publicar.",
       } as BilingualText,
       items: {
-        it: ["Video UGC", "Storytelling visivo", "Contenuti social", "Reels & TikTok"],
-        es: ["Video UGC", "Storytelling visual", "Contenido social", "Reels & TikTok"],
+        it: ["15–30 hook", "Script", "Idee video", "Calendario"],
+        es: ["15–30 hooks", "Guiones", "Ideas de video", "Calendario"],
+      },
+      duration: { it: "5–7 giorni", es: "5–7 días" } as BilingualText,
+      deliverables: {
+        it: ["Contenuti per 30 giorni", "Struttura video"],
+        es: ["Contenido para 30 días", "Estructura de video"],
       },
     },
     {
       number: "03",
-      title: {
-        it: "Meta Ads",
-        es: "Meta Ads",
-      } as BilingualText,
+      emoji: "🧪",
+      highlight: true,
+      title: { it: "Test Creatività & Ottimizzazione", es: "Test de Creatividades & Optimización" } as BilingualText,
       description: {
-        it: "Gestisco campagne pubblicitarie su Facebook e Instagram ottimizzate per risultati reali: lead, vendite, visibilità.",
-        es: "Gestiono campañas publicitarias en Facebook e Instagram optimizadas para resultados reales: leads, ventas, visibilidad.",
+        it: "Testo diverse creatività per identificare cosa funziona.",
+        es: "Testeo creatividades para encontrar lo que funciona.",
       } as BilingualText,
       items: {
-        it: ["Facebook Ads", "Instagram Ads", "A/B Testing", "Report & Analisi"],
-        es: ["Facebook Ads", "Instagram Ads", "A/B Testing", "Reportes & Análisis"],
+        it: ["Test di angoli", "Test hook", "Analisi dati", "Ottimizzazione"],
+        es: ["Test de ángulos", "Test de hooks", "Análisis de datos", "Optimización"],
       },
-    },
-  ],
-
-  // Methodology (4 steps)
-  method: [
-    {
-      number: "01",
-      title: { it: "Analisi", es: "Análisis" } as BilingualText,
-      description: {
-        it: "Studio il tuo brand, il mercato e i competitor per capire dove sei e dove vuoi arrivare.",
-        es: "Estudio tu marca, el mercado y los competidores para entender dónde estás y a dónde quieres llegar.",
-      } as BilingualText,
-    },
-    {
-      number: "02",
-      title: { it: "Strategia", es: "Estrategia" } as BilingualText,
-      description: {
-        it: "Creo un piano d'azione personalizzato con obiettivi chiari e KPI misurabili.",
-        es: "Creo un plan de acción personalizado con objetivos claros y KPIs medibles.",
-      } as BilingualText,
-    },
-    {
-      number: "03",
-      title: { it: "Creazione", es: "Creación" } as BilingualText,
-      description: {
-        it: "Produco contenuti e campagne che raccontano la tua storia in modo autentico.",
-        es: "Produzco contenido y campañas que cuentan tu historia de forma auténtica.",
-      } as BilingualText,
+      duration: { it: "2–4 settimane", es: "2–4 semanas" } as BilingualText,
+      deliverables: {
+        it: ["Contenuti vincenti", "Miglioramento performance"],
+        es: ["Contenido ganador", "Mejora de rendimiento"],
+      },
     },
     {
       number: "04",
-      title: { it: "Ottimizzazione", es: "Optimización" } as BilingualText,
+      emoji: "📊",
+      title: { it: "Meta Ads (Performance)", es: "Meta Ads (Performance)" } as BilingualText,
       description: {
-        it: "Monitoro i risultati e ottimizzo continuamente per massimizzare il ritorno.",
-        es: "Monitoreo los resultados y optimizo continuamente para maximizar el retorno.",
+        it: "Gestisco campagne per trasformare contenuti in risultati.",
+        es: "Gestión de campañas enfocadas en resultados.",
       } as BilingualText,
+      items: {
+        it: ["Setup campagne", "Test", "Scaling"],
+        es: ["Setup de campañas", "Testing", "Scaling"],
+      },
+      duration: { it: "Continuo (min. 30 giorni)", es: "Continuo (mín. 30 días)" } as BilingualText,
+      deliverables: {
+        it: ["Campagne ottimizzate", "Report risultati"],
+        es: ["Campañas optimizadas", "Reporte de resultados"],
+      },
+    },
+    {
+      number: "05",
+      emoji: "💬",
+      highlight: true,
+      title: { it: "Sistema di Conversione WhatsApp", es: "Sistema de Conversión WhatsApp" } as BilingualText,
+      description: {
+        it: "Trasformo l'interesse in conversazioni reali su WhatsApp.",
+        es: "Convierto interés en conversaciones reales en WhatsApp.",
+      } as BilingualText,
+      items: {
+        it: ["Strategia ingresso", "Retargeting", "Ottimizzazione"],
+        es: ["Estrategia de ingreso", "Retargeting", "Optimización"],
+      },
+      duration: { it: "2–4 settimane", es: "2–4 semanas" } as BilingualText,
+      deliverables: {
+        it: ["Contatti reali", "Conversazioni"],
+        es: ["Contactos reales", "Conversaciones"],
+      },
+    },
+    {
+      number: "06",
+      emoji: "⚡",
+      premium: true,
+      title: { it: "Sistema Completo (30 giorni)", es: "Sistema Completo (30 días)" } as BilingualText,
+      description: {
+        it: "Strategia + contenuti + ads + conversione WhatsApp. Sistema completo per generare clienti.",
+        es: "Estrategia + contenido + ads + conversión WhatsApp. Sistema completo para generar clientes.",
+      } as BilingualText,
+      items: {
+        it: ["Tutto incluso", "Strategia a risultato", "Sistema end-to-end"],
+        es: ["Todo incluido", "Estrategia orientada a resultados", "Sistema end-to-end"],
+      },
+      duration: { it: "30 giorni", es: "30 días" } as BilingualText,
+      deliverables: {
+        it: ["Sistema completo", "Clienti generati"],
+        es: ["Sistema completo", "Clientes generados"],
+      },
     },
   ],
 
-  // Portfolio placeholder
+  // 6-step method from client brief
+  method: [
+    { number: "01", title: { it: "Analisi Desiderio", es: "Análisis de Deseo" } as BilingualText },
+    { number: "02", title: { it: "Strategia Creativa", es: "Estrategia Creativa" } as BilingualText },
+    { number: "03", title: { it: "Sviluppo Contenuti", es: "Desarrollo de Contenidos" } as BilingualText },
+    { number: "04", title: { it: "Test Creatività", es: "Test de Creatividades" } as BilingualText },
+    { number: "05", title: { it: "Ads", es: "Ads" } as BilingualText },
+    { number: "06", title: { it: "Conversione WhatsApp", es: "Conversión WhatsApp" } as BilingualText },
+  ],
+
   portfolio: {
     comingSoon: {
-      it: "Sto lavorando sui miei primi casi di studio. Torna presto per vedere i risultati!",
-      es: "Estoy trabajando en mis primeros casos de estudio. ¡Vuelve pronto para ver los resultados!",
+      it: "I miei primi progetti sono in corso. Vuoi essere il prossimo?",
+      es: "Mis primeros proyectos están en curso. ¿Quieres ser el próximo?",
     } as BilingualText,
   },
 
-  // CTA
   cta: {
     title: {
-      it: "Parliamo del tuo prossimo progetto",
-      es: "Hablemos de tu próximo proyecto",
+      it: "Analizziamo il tuo brand",
+      es: "Analizamos tu marca",
     } as BilingualText,
     description: {
-      it: "Che tu abbia bisogno di una strategia, contenuti o campagne ads — sono qui per aiutarti a crescere.",
-      es: "Ya sea que necesites una estrategia, contenido o campañas de ads — estoy aquí para ayudarte a crecer.",
+      it: "Che tu abbia bisogno di strategia, contenuti, ads o un sistema completo — sono qui per generare risultati.",
+      es: "Ya sea que necesites estrategia, contenido, ads o un sistema completo — estoy aquí para generar resultados.",
     } as BilingualText,
     buttonText: {
-      it: "Scrivimi",
-      es: "Escríbeme",
+      it: "Parliamo",
+      es: "Hablemos",
     } as BilingualText,
   },
 
-  // Social links
   social: {
     email: "Drusilamiranda.creator@gmail.com",
     instagram: "https://instagram.com/drusilla_miranda",
