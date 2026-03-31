@@ -2,7 +2,7 @@
 
 Portafolio profesional.
 
-**Live:** *Se actualizará después del deploy*
+**Live:** [drusila-miranda.cofoundy.dev](https://drusila-miranda.cofoundy.dev/)
 
 ## Tech Stack
 
