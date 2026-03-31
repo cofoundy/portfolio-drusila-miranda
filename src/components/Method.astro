@@ -1,40 +1,52 @@
 ---
 import { siteConfig } from "../config";
+
+const methodIcons = [
+  `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>`,
+  `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
+  `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>`,
+  `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>`,
+];
 ---
 
-<section id="metodo" class="py-20 md:py-28 bg-white">
-  <div class="max-w-5xl mx-auto px-6">
+<section id="metodo" class="py-20 md:py-28 bg-[var(--color-primary-dark)] text-[var(--color-surface-light)] relative overflow-hidden">
+  <!-- Decorative gradient orb -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[var(--color-accent)]/5 blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-5xl mx-auto px-6 relative">
     <!-- Section header -->
-    <div class="mb-14 reveal">
-      <p class="text-[var(--color-accent)] text-xs tracking-widest uppercase mb-3 font-semibold" data-lang data-it="Il Mio Metodo" data-es="Mi Método">Il Mio Metodo</p>
-      <div class="w-12 h-0.5 bar-shimmer rounded-full"></div>
+    <div class="text-center mb-16 reveal">
+      <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" data-lang data-it="Come Lavoro" data-es="Cómo Trabajo">Come Lavoro</p>
+      <h2 class="font-['Playfair_Display',serif] text-3xl md:text-4xl font-bold" data-lang data-it="Il Mio Metodo" data-es="Mi Método">Il Mio Metodo</h2>
+      <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent mx-auto mt-4"></div>
     </div>
 
-    <!-- Steps -->
-    <div class="relative">
-      <!-- Vertical gold line (desktop) -->
-      <div class="hidden md:block absolute left-[39px] top-4 bottom-4 w-px bg-gradient-to-b from-[var(--color-accent)] via-[var(--color-primary-light)] to-[var(--color-accent)]/20"></div>
-
-      <div class="space-y-10 md:space-y-12">
-        {siteConfig.method.map((step, i) => (
-          <div class={`reveal stagger-${i + 1} flex gap-6 md:gap-10 items-start`}>
-            <!-- Number circle -->
-            <div class="shrink-0 w-20 h-20 rounded-full border-2 border-[var(--color-accent)] flex items-center justify-center bg-white relative z-10">
-              <span class="font-['Playfair_Display',serif] text-2xl font-bold text-[var(--color-accent)]">{step.number}</span>
-            </div>
-
-            <!-- Content -->
-            <div class="pt-4">
-              <h3 class="font-['Playfair_Display',serif] text-xl md:text-2xl font-bold text-[var(--color-primary-dark)] mb-2" data-lang data-it={step.title.it} data-es={step.title.es}>
-                {step.title.it}
-              </h3>
-              <p class="text-sm md:text-base text-[var(--color-primary)] leading-relaxed max-w-lg" data-lang data-it={step.description.it} data-es={step.description.es}>
-                {step.description.it}
-              </p>
+    <!-- Steps grid: 2x2 on desktop -->
+    <div class="grid sm:grid-cols-2 gap-6">
+      {siteConfig.method.map((step, i) => (
+        <div class={`reveal stagger-${i + 1} group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[var(--color-accent)]/30 transition-all duration-500`}>
+          <!-- Number + Icon row -->
+          <div class="flex items-center gap-4 mb-5">
+            <span class="font-['Playfair_Display',serif] text-4xl font-bold text-[var(--color-accent)]/30 group-hover:text-[var(--color-accent)] transition-colors duration-300">{step.number}</span>
+            <div class="w-10 h-10 rounded-lg bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)]">
+              <Fragment set:html={methodIcons[i]} />
             </div>
           </div>
-        ))}
-      </div>
+
+          <!-- Title -->
+          <h3 class="font-['Playfair_Display',serif] text-xl font-bold mb-3 text-[var(--color-surface-light)]" data-lang data-it={step.title.it} data-es={step.title.es}>
+            {step.title.it}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-sm text-[var(--color-primary-light)] leading-relaxed" data-lang data-it={step.description.it} data-es={step.description.es}>
+            {step.description.it}
+          </p>
+
+          <!-- Decorative corner -->
+          <div class="absolute bottom-3 right-3 w-6 h-6 border-b border-r border-[var(--color-accent)]/20 rounded-br-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

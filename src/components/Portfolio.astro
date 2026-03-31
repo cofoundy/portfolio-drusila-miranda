@@ -1,38 +1,58 @@
 ---
 import { siteConfig } from "../config";
+
+// Categories she works in (from Linktree + WhatsApp)
+const categories = [
+  { label: { it: "B&B & Hospitality", es: "B&B & Hospitalidad" }, status: "wip" },
+  { label: { it: "Food & Lifestyle", es: "Food & Lifestyle" }, status: "soon" },
+  { label: { it: "Beauty & Wellness", es: "Belleza & Bienestar" }, status: "soon" },
+];
 ---
 
-<section id="portfolio" class="py-20 md:py-28 bg-[var(--color-surface)]">
+<section id="portfolio" class="py-20 md:py-28 bg-white relative">
   <div class="max-w-5xl mx-auto px-6">
     <!-- Section header -->
-    <div class="mb-14 reveal">
-      <p class="text-[var(--color-accent)] text-xs tracking-widest uppercase mb-3 font-semibold">Portfolio</p>
-      <div class="w-12 h-0.5 bar-shimmer rounded-full"></div>
+    <div class="text-center mb-14 reveal">
+      <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3">Portfolio</p>
+      <h2 class="font-['Playfair_Display',serif] text-3xl md:text-4xl font-bold text-[var(--color-primary-dark)]" data-lang data-it="Casi di Studio" data-es="Casos de Estudio">Casi di Studio</h2>
+      <div class="w-16 h-0.5 bar-shimmer rounded-full mx-auto mt-4"></div>
     </div>
 
-    <!-- Coming Soon placeholder (elegant) -->
-    <div class="reveal stagger-1">
-      <div class="max-w-xl mx-auto text-center py-16 px-8 border border-dashed border-[var(--color-primary-light)]/40 rounded-2xl bg-white/50">
-        <!-- Decorative gold diamond -->
-        <div class="mb-6 flex justify-center">
-          <div class="w-3 h-3 rotate-45 bg-[var(--color-accent)]"></div>
+    <!-- Category cards grid -->
+    <div class="grid sm:grid-cols-3 gap-6 mb-12 reveal stagger-1">
+      {categories.map((cat) => (
+        <div class="group relative bg-[var(--color-surface)] rounded-2xl p-8 text-center border border-[var(--color-primary-light)]/10 hover:border-[var(--color-accent)]/30 transition-all duration-300">
+          <!-- Status badge -->
+          <div class="inline-flex items-center gap-1.5 bg-white rounded-full px-3 py-1 mb-5">
+            <span class={`w-2 h-2 rounded-full ${cat.status === 'wip' ? 'bg-[var(--color-accent)] animate-pulse' : 'bg-[var(--color-primary-light)]/40'}`}></span>
+            <span class="text-[10px] tracking-[0.15em] uppercase text-[var(--color-primary)] font-medium">
+              {cat.status === 'wip' ? 'In Progress' : 'Coming Soon'}
+            </span>
+          </div>
+
+          <!-- Category icon placeholder (decorative) -->
+          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-white flex items-center justify-center">
+            <div class="w-8 h-8 border-2 border-dashed border-[var(--color-primary-light)]/30 rounded-lg flex items-center justify-center">
+              <span class="text-[var(--color-accent)] text-lg">✦</span>
+            </div>
+          </div>
+
+          <!-- Category name -->
+          <h3 class="font-['Playfair_Display',serif] text-lg font-bold text-[var(--color-primary-dark)]" data-lang data-it={cat.label.it} data-es={cat.label.es}>
+            {cat.label.it}
+          </h3>
         </div>
+      ))}
+    </div>
 
-        <h3 class="font-['Playfair_Display',serif] italic text-2xl text-[var(--color-primary)] mb-4" data-lang data-it="In Arrivo" data-es="Próximamente">
-          In Arrivo
-        </h3>
-
-        <p class="text-sm text-[var(--color-primary)]/70 leading-relaxed mb-8 max-w-sm mx-auto" data-lang data-it={siteConfig.portfolio.comingSoon.it} data-es={siteConfig.portfolio.comingSoon.es}>
-          {siteConfig.portfolio.comingSoon.it}
+    <!-- Bottom CTA -->
+    <div class="text-center reveal stagger-2">
+      <div class="inline-flex items-center gap-3 bg-[var(--color-surface)] rounded-full px-6 py-3">
+        <div class="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse"></div>
+        <p class="text-sm text-[var(--color-primary)]" data-lang data-it="I miei primi progetti sono in corso. Vuoi essere il prossimo?" data-es="Mis primeros proyectos están en curso. ¿Quieres ser el próximo?">
+          I miei primi progetti sono in corso. Vuoi essere il prossimo?
         </p>
-
-        <a
-          href="#contatto"
-          class="inline-flex items-center gap-2 text-sm text-[var(--color-accent)] font-medium hover:text-[var(--color-primary-dark)] transition-colors link-underline"
-        >
-          <span data-lang data-it="Contattami per saperne di più" data-es="Contáctame para saber más">Contattami per saperne di più</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
+        <a href="#contatto" class="text-[var(--color-accent)] font-semibold text-sm hover:underline" data-lang data-it="Contattami →" data-es="Contáctame →">Contattami →</a>
       </div>
     </div>
   </div>
