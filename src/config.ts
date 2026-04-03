@@ -41,118 +41,92 @@ export const siteConfig = {
     es: "No creo contenido por publicar. Creo contenido para convertir.",
   } as BilingualText,
 
-  // 6 services from client brief
+  // Featured system + 3 individual services
+  sistemaCompleto: {
+    title: { it: "Sistema Completo", es: "Sistema Completo" } as BilingualText,
+    badge: { it: "Consigliato", es: "Recomendado" } as BilingualText,
+    description: {
+      it: "Sistema integrato di acquisizione clienti attraverso contenuti e pubblicità. Progettato per business che vogliono smettere di improvvisare e iniziare a vendere con una struttura chiara.",
+      es: "Sistema integral de adquisición de clientes a través de contenido y publicidad. Diseñado para negocios que quieren dejar de improvisar y empezar a vender con estrategia.",
+    } as BilingualText,
+    items: {
+      it: [
+        "Analisi strategica del business e del mercato",
+        "Identificazione del cliente ideale (desideri, problemi, obiezioni)",
+        "Sviluppo del messaggio e degli angoli di vendita",
+        "Creazione di 15 script strategici pronti per contenuti e ads",
+        "Creazione del video strategico per la campagna",
+        "Struttura e configurazione campagne Meta Ads",
+        "Testing iniziale e ottimizzazione",
+      ],
+      es: [
+        "Análisis estratégico del negocio y del mercado",
+        "Identificación del cliente ideal (deseos, problemas, objeciones)",
+        "Desarrollo del mensaje y ángulos de venta",
+        "Creación de 15 guiones estratégicos (contenido + ads)",
+        "Creación del video estratégico para campaña",
+        "Estructura y configuración de campañas Meta Ads",
+        "Testeo inicial y optimización",
+      ],
+    },
+    objective: {
+      it: "Creare un sistema completo che attragga, converta e generi vendite",
+      es: "Crear un sistema que atraiga, convierta y genere ventas",
+    } as BilingualText,
+  },
+
   services: [
     {
       number: "01",
       emoji: "🎯",
-      title: { it: "Strategia Creativa", es: "Estrategia Creativa" } as BilingualText,
+      title: { it: "Analisi Strategica del Business", es: "Análisis Estratégico del Negocio" } as BilingualText,
       description: {
-        it: "Definisco la base del marketing del brand: angoli, messaggi e direzione strategica.",
-        es: "Defino la base estratégica del negocio.",
+        it: "Analisi completa basata su comportamento reale del cliente.",
+        es: "Evaluación completa basada en comportamiento del cliente.",
       } as BilingualText,
       items: {
-        it: ["Analisi brand", "Studio audience", "Identificazione desiderio", "Angolo strategico"],
-        es: ["Análisis de marca", "Audiencia", "Deseo", "Ángulo estratégico"],
+        it: ["Posizionamento", "Comunicazione", "Cliente ideale", "Problemi di vendita", "Opportunità di crescita"],
+        es: ["Posicionamiento", "Comunicación", "Cliente ideal", "Problemas en ventas", "Oportunidades de mejora"],
       },
-      duration: { it: "3–5 giorni", es: "3–5 días" } as BilingualText,
-      deliverables: {
-        it: ["Documento strategico", "Direzione contenuti"],
-        es: ["Documento estratégico", "Dirección de contenidos"],
-      },
+      result: {
+        it: "Direzione strategica chiara",
+        es: "Claridad y dirección estratégica",
+      } as BilingualText,
     },
     {
       number: "02",
-      emoji: "📱",
-      title: { it: "Sistema di Contenuti (30 giorni)", es: "Sistema de Contenidos (30 días)" } as BilingualText,
+      emoji: "🎬",
+      title: { it: "Script Strategici per Contenuti & Ads", es: "Guiones Estratégicos para Contenido & Ads" } as BilingualText,
+      subtitle: { it: "15 video", es: "15 videos" } as BilingualText,
       description: {
-        it: "Creo contenuti pensati per convertire, non per pubblicare.",
-        es: "Creo contenido para convertir, no para publicar.",
+        it: "Creazione di 15 script pronti, basati su ricerca del mercato.",
+        es: "Creación de 15 guiones listos para grabar.",
       } as BilingualText,
       items: {
-        it: ["15–30 hook", "Script", "Idee video", "Calendario"],
-        es: ["15–30 hooks", "Guiones", "Ideas de video", "Calendario"],
+        it: ["Ricerca del mercato", "Angoli di vendita", "Hook ad alto impatto", "Struttura persuasiva", "Formati UGC, storytelling, problema-soluzione"],
+        es: ["Investigación del cliente", "Ángulos de venta", "Hooks de alto impacto", "Estructura persuasiva", "Formatos UGC, storytelling, problema-solución"],
       },
-      duration: { it: "5–7 giorni", es: "5–7 días" } as BilingualText,
-      deliverables: {
-        it: ["Contenuti per 30 giorni", "Struttura video"],
-        es: ["Contenido para 30 días", "Estructura de video"],
-      },
+      result: {
+        it: "Contenuti che attirano e convertono",
+        es: "Contenido que convierte",
+      } as BilingualText,
     },
     {
       number: "03",
-      emoji: "🧪",
-      highlight: true,
-      title: { it: "Test Creatività & Ottimizzazione", es: "Test de Creatividades & Optimización" } as BilingualText,
-      description: {
-        it: "Testo diverse creatività per identificare cosa funziona.",
-        es: "Testeo creatividades para encontrar lo que funciona.",
-      } as BilingualText,
-      items: {
-        it: ["Test di angoli", "Test hook", "Analisi dati", "Ottimizzazione"],
-        es: ["Test de ángulos", "Test de hooks", "Análisis de datos", "Optimización"],
-      },
-      duration: { it: "2–4 settimane", es: "2–4 semanas" } as BilingualText,
-      deliverables: {
-        it: ["Contenuti vincenti", "Miglioramento performance"],
-        es: ["Contenido ganador", "Mejora de rendimiento"],
-      },
-    },
-    {
-      number: "04",
       emoji: "📊",
-      title: { it: "Meta Ads (Performance)", es: "Meta Ads (Performance)" } as BilingualText,
+      title: { it: "Campagne Meta Ads + Video Strategico", es: "Campañas Meta Ads + Video Estratégico" } as BilingualText,
       description: {
-        it: "Gestisco campagne per trasformare contenuti in risultati.",
-        es: "Gestión de campañas enfocadas en resultados.",
+        it: "Creazione e lancio campagne pubblicitarie.",
+        es: "Creación y lanzamiento de campañas.",
       } as BilingualText,
       items: {
-        it: ["Setup campagne", "Test", "Scaling"],
-        es: ["Setup de campañas", "Testing", "Scaling"],
+        it: ["Video strategico per ads", "Struttura campagna", "Messaggio allineato al mercato", "Setup Meta Ads", "Testing iniziale"],
+        es: ["Video estratégico", "Estructura de campaña", "Mensaje alineado al mercado", "Configuración en Meta Ads", "Testeo inicial"],
       },
-      duration: { it: "Continuo (min. 30 giorni)", es: "Continuo (mín. 30 días)" } as BilingualText,
-      deliverables: {
-        it: ["Campagne ottimizzate", "Report risultati"],
-        es: ["Campañas optimizadas", "Reporte de resultados"],
-      },
-    },
-    {
-      number: "05",
-      emoji: "💬",
-      highlight: true,
-      title: { it: "Sistema di Conversione WhatsApp", es: "Sistema de Conversión WhatsApp" } as BilingualText,
-      description: {
-        it: "Trasformo l'interesse in conversazioni reali su WhatsApp.",
-        es: "Convierto interés en conversaciones reales en WhatsApp.",
+      result: {
+        it: "Generare clienti reali",
+        es: "Generar clientes reales",
       } as BilingualText,
-      items: {
-        it: ["Strategia ingresso", "Retargeting", "Ottimizzazione"],
-        es: ["Estrategia de ingreso", "Retargeting", "Optimización"],
-      },
-      duration: { it: "2–4 settimane", es: "2–4 semanas" } as BilingualText,
-      deliverables: {
-        it: ["Contatti reali", "Conversazioni"],
-        es: ["Contactos reales", "Conversaciones"],
-      },
-    },
-    {
-      number: "06",
-      emoji: "⚡",
-      premium: true,
-      title: { it: "Sistema Completo (30 giorni)", es: "Sistema Completo (30 días)" } as BilingualText,
-      description: {
-        it: "Strategia + contenuti + ads + conversione WhatsApp. Sistema completo per generare clienti.",
-        es: "Estrategia + contenido + ads + conversión WhatsApp. Sistema completo para generar clientes.",
-      } as BilingualText,
-      items: {
-        it: ["Tutto incluso", "Strategia a risultato", "Sistema end-to-end"],
-        es: ["Todo incluido", "Estrategia orientada a resultados", "Sistema end-to-end"],
-      },
-      duration: { it: "30 giorni", es: "30 días" } as BilingualText,
-      deliverables: {
-        it: ["Sistema completo", "Clienti generati"],
-        es: ["Sistema completo", "Clientes generados"],
-      },
     },
   ],
 
