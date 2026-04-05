@@ -2,6 +2,7 @@
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
 import Services from "../components/Services.astro";
 import Method from "../components/Method.astro";
 import Portfolio from "../components/Portfolio.astro";
@@ -52,8 +53,13 @@ import "../styles/global.css";
 
       <About />
 
-      <!-- About → Services: subtle gradient blend -->
-      <div class="h-16 bg-gradient-to-b from-white to-[var(--color-surface)]"></div>
+      <!-- About → Skills: subtle blend -->
+      <div class="h-12 bg-gradient-to-b from-white to-[var(--color-surface-light)]"></div>
+
+      <Skills />
+
+      <!-- Skills → Services: blend -->
+      <div class="h-12 bg-gradient-to-b from-[var(--color-surface-light)] to-[var(--color-surface)]"></div>
 
       <Services />
 

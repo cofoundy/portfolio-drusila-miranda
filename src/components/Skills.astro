@@ -1,0 +1,24 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="competenze" class="py-20 md:py-28 bg-[var(--color-surface-light)] relative">
+  <div class="max-w-5xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="text-center mb-12 reveal">
+      <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" data-lang data-it="Competenze" data-es="Habilidades">Competenze</p>
+      <h2 class="font-['Playfair_Display',serif] text-3xl md:text-4xl font-bold text-[var(--color-primary-dark)]" data-lang data-it="Livello Strategico" data-es="Nivel Estratégico">Livello Strategico</h2>
+      <div class="w-16 h-0.5 bar-shimmer rounded-full mx-auto mt-4"></div>
+    </div>
+
+    <!-- Skills grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {siteConfig.skills.it.map((skill: string, i: number) => (
+        <div class={`reveal stagger-${Math.min((i % 6) + 1, 6)} group flex items-start gap-3 bg-white rounded-xl px-5 py-4 border border-[var(--color-primary-light)]/10 hover:border-[var(--color-accent)]/30 transition-all duration-300`}>
+          <span class="mt-0.5 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0 group-hover:scale-125 transition-transform"></span>
+          <span class="text-sm text-[var(--color-primary-dark)]/80" data-lang data-it={siteConfig.skills.it[i]} data-es={siteConfig.skills.es[i] || skill}>{skill}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

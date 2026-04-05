@@ -21,25 +21,87 @@ export const siteConfig = {
   },
 
   tagline: {
-    it: "Creo sistemi di contenuto e advertising che trasformano attenzione in conversazioni e vendite.",
-    es: "Creo sistemas de contenido y publicidad que convierten atención en conversaciones y ventas.",
+    it: "Trasformo business e servizi in sistemi di marketing che attraggono, convertono e scalano.",
+    es: "Transformo negocios y servicios en sistemas de marketing que atraen, convierten y escalan.",
   } as BilingualText,
 
-  // Positioning statement
+  // Positioning statement (below tagline in Hero)
   positioning: {
-    it: "Lavoro con strategia, creatività e test per identificare i messaggi che generano risultati reali.",
-    es: "Trabajo con estrategia, creatividad y test para encontrar lo que realmente convierte.",
+    it: "Strategia. Contenuto. Pubblicità. Tutto allineato per generare vendite reali.",
+    es: "Estrategia. Contenido. Publicidad. Todo alineado para generar ventas reales.",
   } as BilingualText,
 
   about: {
-    it: "Sono una creative marketing strategist peruviana basata in Italia. Unisco la creatività latina con la mentalità strategica europea per creare sistemi che generano risultati reali. Non creo contenuti per pubblicare — creo contenuti per convertire.",
-    es: "Soy una creative marketing strategist peruana basada en Italia. Combino la creatividad latina con la mentalidad estratégica europea para crear sistemas que generan resultados reales. No creo contenido por publicar — creo contenido para convertir.",
+    it: "Sono Drusila Miranda, stratega di marketing creativo specializzata in contenuti e advertising digitale. Analizzo il comportamento del cliente e lo trasformo in comunicazione che converte.",
+    es: "Soy Drusila Miranda, estratega de marketing creativo especializada en contenido y publicidad digital. Analizo cómo piensa el cliente, qué desea y qué lo frena, y transformo eso en mensajes que convierten.",
   } as BilingualText,
 
   quote: {
-    it: "Non creo contenuti per pubblicare. Creo contenuti per convertire.",
-    es: "No creo contenido por publicar. Creo contenido para convertir.",
+    it: "Non lavoro con supposizioni. Lavoro con strategia e comportamento reale.",
+    es: "No trabajo con suposiciones. Trabajo con estructura, datos y comportamiento real del cliente.",
   } as BilingualText,
+
+  // Specialization section
+  specialization: {
+    description: {
+      it: "Progetto sistemi di marketing dove contenuti + messaggio + advertising lavorano insieme per vendere.",
+      es: "Diseño sistemas de marketing donde contenido + mensaje + publicidad trabajan juntos para generar ventas.",
+    } as BilingualText,
+    items: {
+      it: [
+        "Psicologia del consumatore",
+        "Analisi del mercato e del desiderio",
+        "Strategia creativa applicata ai contenuti",
+        "Esecuzione Meta Ads orientata ai risultati",
+      ],
+      es: [
+        "Psicología del consumidor",
+        "Análisis del mercado y del deseo",
+        "Estrategia creativa aplicada a contenido y anuncios",
+        "Ejecución en Meta Ads orientada a resultados",
+      ],
+    },
+    closing: {
+      it: "Non lavoro con supposizioni. Lavoro con strategia e comportamento reale.",
+      es: "No trabajo con suposiciones. Trabajo con estructura, datos y comportamiento real del cliente.",
+    } as BilingualText,
+  },
+
+  // Skills / Competenze
+  skills: {
+    it: [
+      "Analisi del mercato e del desiderio",
+      "Costruzione della proposta di valore",
+      "Sviluppo degli angoli di vendita",
+      "Creazione di hook ad alto impatto",
+      "Copywriting orientato alla vendita",
+      "Script strategici per contenuti e ads",
+      "Strategia di contenuto (Criterio / Vínculo / Autorità)",
+      "Direzione creativa video",
+      "Analisi competitor e trend",
+      "Struttura di sistemi di vendita",
+      "Meta Ads (struttura, lancio, ottimizzazione)",
+      "Testing creativo",
+      "Scalabilità delle campagne",
+    ],
+    es: [
+      "Análisis profundo del mercado (deseo, problema, objeciones)",
+      "Identificación de \"mass desire\" (Breakthrough Advertising)",
+      "Construcción de propuesta de valor",
+      "Desarrollo de ángulos de venta",
+      "Creación de hooks de alto impacto (UGC + Ads)",
+      "Copywriting basado en ventas (no creativo vacío)",
+      "Estructuración de guiones estratégicos",
+      "Estrategia de contenido (Criterio / Vínculo / Autoridad)",
+      "Dirección creativa para videos (UGC / Ads)",
+      "Análisis de competencia y tendencias",
+      "Diseño de sistemas de venta (no contenido aislado)",
+      "Estructuración de campañas Meta Ads",
+      "Optimización de conversión",
+      "Testing creativo (hooks, formatos, mensajes)",
+      "Escalado de campañas (horizontal y vertical)",
+    ],
+  },
 
   // Featured system + 3 individual services
   sistemaCompleto: {
@@ -130,15 +192,45 @@ export const siteConfig = {
     },
   ],
 
-  // 6-step method from client brief
+  // 4-step methodology
   method: [
-    { number: "01", title: { it: "Analisi Desiderio", es: "Análisis de Deseo" } as BilingualText },
-    { number: "02", title: { it: "Strategia Creativa", es: "Estrategia Creativa" } as BilingualText },
-    { number: "03", title: { it: "Sviluppo Contenuti", es: "Desarrollo de Contenidos" } as BilingualText },
-    { number: "04", title: { it: "Test Creatività", es: "Test de Creatividades" } as BilingualText },
-    { number: "05", title: { it: "Ads", es: "Ads" } as BilingualText },
-    { number: "06", title: { it: "Conversione WhatsApp", es: "Conversión WhatsApp" } as BilingualText },
+    {
+      number: "01",
+      title: { it: "Presentazione", es: "Presentación" } as BilingualText,
+      description: {
+        it: "Hook e messaggi che catturano attenzione.",
+        es: "Captar atención con hooks y mensajes alineados al deseo del mercado.",
+      } as BilingualText,
+    },
+    {
+      number: "02",
+      title: { it: "Valutazione", es: "Evaluación" } as BilingualText,
+      description: {
+        it: "Contenuti strategici che educano e posizionano.",
+        es: "El cliente analiza, compara y entiende el valor a través del contenido estratégico.",
+      } as BilingualText,
+    },
+    {
+      number: "03",
+      title: { it: "Conversione", es: "Conversión" } as BilingualText,
+      description: {
+        it: "Riduzione delle obiezioni e aumento della fiducia.",
+        es: "Se eliminan objeciones y se construye confianza para facilitar la compra.",
+      } as BilingualText,
+    },
+    {
+      number: "04",
+      title: { it: "Fidelizzazione e Scaling", es: "Ascensión" } as BilingualText,
+      description: {
+        it: "Fidelizzazione e aumento del valore del cliente.",
+        es: "Se aumenta el valor del cliente mediante continuidad, recompra y fidelización.",
+      } as BilingualText,
+    },
   ],
+  methodClosing: {
+    it: "Questo sistema connette contenuti + pubblicità + vendite in un unico flusso.",
+    es: "Este sistema conecta contenido + publicidad + ventas en un solo flujo.",
+  } as BilingualText,
 
   portfolio: {
     comingSoon: {

@@ -1,7 +1,7 @@
 ---
 import { siteConfig } from "../config";
 
-const methodIcons = ["🔍", "🎯", "📱", "🧪", "📊", "💬"];
+const methodIcons = ["🎯", "🔍", "🤝", "📈"];
 ---
 
 <section id="metodo" class="pt-10 pb-20 md:pt-14 md:pb-28 bg-[var(--color-primary-dark)] text-[var(--color-surface-light)] relative overflow-hidden">
@@ -12,41 +12,50 @@ const methodIcons = ["🔍", "🎯", "📱", "🧪", "📊", "💬"];
     <!-- Section header -->
     <div class="text-center mb-14 reveal">
       <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" data-lang data-it="Come Lavoro" data-es="Cómo Trabajo">Come Lavoro</p>
-      <h2 class="font-['Playfair_Display',serif] text-3xl md:text-4xl font-bold" data-lang data-it="Il Mio Metodo" data-es="Mi Método">Il Mio Metodo</h2>
+      <h2 class="font-['Playfair_Display',serif] text-3xl md:text-4xl font-bold" data-lang data-it="Metodologia" data-es="Metodología">Metodologia</h2>
       <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent mx-auto mt-4"></div>
     </div>
 
-    <!-- 6 steps: 3x2 grid on desktop, 2x3 on tablet, stacked on mobile -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
-      {siteConfig.method.map((step, i) => (
-        <div class={`reveal stagger-${Math.min(i + 1, 6)} group relative bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-[var(--color-accent)]/30 transition-all duration-500 text-center`}>
-          <!-- Emoji -->
-          <span class="text-2xl mb-3 block">{methodIcons[i]}</span>
+    <!-- 4 steps: 2x2 grid on desktop, stacked on mobile -->
+    <div class="grid sm:grid-cols-2 gap-5 md:gap-6">
+      {siteConfig.method.map((step: any, i: number) => (
+        <div class={`reveal stagger-${i + 1} group relative bg-white/5 backdrop-blur-sm rounded-xl p-7 border border-white/10 hover:border-[var(--color-accent)]/30 transition-all duration-500`}>
+          {/* Number + Emoji header */}
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">{methodIcons[i]}</span>
+              <span class="font-['Playfair_Display',serif] text-xs font-bold text-[var(--color-accent)]/60 tracking-[0.2em] uppercase">{step.number}</span>
+            </div>
+            <span class="font-['Playfair_Display',serif] text-5xl font-bold text-white/5 group-hover:text-[var(--color-accent)]/10 transition-colors duration-300">{step.number}</span>
+          </div>
 
-          <!-- Number -->
-          <span class="font-['Playfair_Display',serif] text-sm font-bold text-[var(--color-accent)]/50 block mb-1">{step.number}</span>
-
-          <!-- Title -->
-          <h3 class="font-['Playfair_Display',serif] text-sm md:text-base font-bold text-[var(--color-surface-light)] leading-tight" data-lang data-it={step.title.it} data-es={step.title.es}>
+          {/* Title */}
+          <h3 class="font-['Playfair_Display',serif] text-lg font-bold text-[var(--color-surface-light)] mb-2" data-lang data-it={step.title.it} data-es={step.title.es}>
             {step.title.it}
           </h3>
 
-          {/* Connecting arrow (hidden on last item per row) */}
-          {i < 5 && (
-            <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-[var(--color-accent)]/30 z-10">
-              {(i + 1) % 3 !== 0 && <span class="text-lg">→</span>}
+          {/* Description */}
+          <p class="text-sm text-[var(--color-surface-light)]/60 leading-relaxed" data-lang data-it={step.description.it} data-es={step.description.es}>
+            {step.description.it}
+          </p>
+
+          {/* Connecting arrow (right side, desktop only, not on last column) */}
+          {i % 2 === 0 && i < 3 && (
+            <div class="hidden sm:block absolute -right-3.5 top-1/2 -translate-y-1/2 text-[var(--color-accent)]/30 z-10">
+              <span class="text-lg">→</span>
             </div>
           )}
         </div>
       ))}
     </div>
 
-    <!-- Bottom flow arrow on mobile -->
-    <div class="flex justify-center mt-6 reveal stagger-6">
-      <div class="flex items-center gap-2 text-[var(--color-accent)]/40">
-        <div class="w-8 h-px bg-[var(--color-accent)]/30"></div>
-        <span class="text-xs tracking-[0.2em] uppercase" data-lang data-it="Risultati" data-es="Resultados">Risultati</span>
-        <div class="w-8 h-px bg-[var(--color-accent)]/30"></div>
+    <!-- Bottom closing statement -->
+    <div class="flex justify-center mt-8 reveal stagger-5">
+      <div class="flex items-center gap-3 bg-[var(--color-accent)]/10 rounded-full px-6 py-3">
+        <span class="text-[var(--color-accent)]">👉</span>
+        <p class="text-sm text-[var(--color-accent)] font-medium" data-lang data-it={siteConfig.methodClosing.it} data-es={siteConfig.methodClosing.es}>
+          {siteConfig.methodClosing.it}
+        </p>
       </div>
     </div>
   </div>

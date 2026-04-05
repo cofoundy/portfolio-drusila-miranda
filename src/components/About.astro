@@ -36,7 +36,7 @@ import { siteConfig } from "../config";
         </div>
       </div>
 
-      <!-- Bio + Quote column -->
+      <!-- Bio + Specialization column -->
       <div class="md:col-span-9">
         <div class="grid md:grid-cols-2 gap-8">
           <!-- Bio -->
@@ -58,6 +58,28 @@ import { siteConfig } from "../config";
               </blockquote>
             </div>
           </div>
+        </div>
+
+        <!-- Specialization -->
+        <div class="mt-12 reveal stagger-3">
+          <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-4" data-lang data-it="Specializzazione" data-es="Especialidad">Specializzazione</p>
+
+          <p class="text-[var(--color-primary-dark)]/80 leading-relaxed text-[15px] mb-6" data-lang data-it={siteConfig.specialization.description.it} data-es={siteConfig.specialization.description.es}>
+            {siteConfig.specialization.description.it}
+          </p>
+
+          <ul class="grid sm:grid-cols-2 gap-3 mb-6">
+            {siteConfig.specialization.items.it.map((item: string, i: number) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0"></span>
+                <span class="text-sm text-[var(--color-primary-dark)]/70" data-lang data-it={siteConfig.specialization.items.it[i]} data-es={siteConfig.specialization.items.es[i]}>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p class="font-['Playfair_Display',serif] italic text-sm text-[var(--color-primary)] border-l-2 border-[var(--color-accent)]/30 pl-4" data-lang data-it={siteConfig.specialization.closing.it} data-es={siteConfig.specialization.closing.es}>
+            {siteConfig.specialization.closing.it}
+          </p>
         </div>
       </div>
     </div>
