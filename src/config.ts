@@ -10,14 +10,15 @@ export const siteConfig = {
     es: "Drusila Miranda — Estrategia creativa, contenido y Meta Ads para convertir atención en conversaciones y ventas.",
   } as BilingualText,
 
-  accentColor: "#D4A853",
+  // All-black theme: bg negro, texto blanco, amarillo tenue como acento
+  accentColor: "#D4AF37",
   colors: {
-    primaryDark: "#1A1A1A",
-    primary: "#8B7355",
-    primaryLight: "#C4A77D",
-    accent: "#D4A853",
-    surface: "#F5F0E8",
-    surfaceLight: "#FAF7F2",
+    primaryDark: "#000000",
+    primary: "#F5F5F5",
+    primaryLight: "#A8A8A8",
+    accent: "#D4AF37",
+    surface: "#0A0A0A",
+    surfaceLight: "#111111",
   },
 
   tagline: {
@@ -25,20 +26,15 @@ export const siteConfig = {
     es: "Transformo negocios y servicios en sistemas de marketing que atraen, convierten y escalan.",
   } as BilingualText,
 
-  // Positioning statement (below tagline in Hero)
   positioning: {
     it: "Strategia. Contenuto. Pubblicità. Tutto allineato per generare vendite reali.",
     es: "Estrategia. Contenido. Publicidad. Todo alineado para generar ventas reales.",
   } as BilingualText,
 
+  // Chi Sono
   about: {
     it: "Sono Drusila Miranda, stratega di marketing creativo specializzata in contenuti e advertising digitale. Analizzo il comportamento del cliente e lo trasformo in comunicazione che converte.",
     es: "Soy Drusila Miranda, estratega de marketing creativo especializada en contenido y publicidad digital. Analizo cómo piensa el cliente, qué desea y qué lo frena, y transformo eso en mensajes que convierten.",
-  } as BilingualText,
-
-  quote: {
-    it: "Non lavoro con supposizioni. Lavoro con strategia e comportamento reale.",
-    es: "No trabajo con suposiciones. Trabajo con estructura, datos y comportamiento real del cliente.",
   } as BilingualText,
 
   // Specialization section
@@ -46,6 +42,10 @@ export const siteConfig = {
     description: {
       it: "Progetto sistemi di marketing dove contenuti + messaggio + advertising lavorano insieme per vendere.",
       es: "Diseño sistemas de marketing donde contenido + mensaje + publicidad trabajan juntos para generar ventas.",
+    } as BilingualText,
+    intro: {
+      it: "Il mio approccio si basa su:",
+      es: "Mi enfoque se basa en:",
     } as BilingualText,
     items: {
       it: [
@@ -67,41 +67,81 @@ export const siteConfig = {
     } as BilingualText,
   },
 
-  // Skills / Competenze
-  skills: {
-    it: [
-      "Analisi del mercato e del desiderio",
-      "Costruzione della proposta di valore",
-      "Sviluppo degli angoli di vendita",
-      "Creazione di hook ad alto impatto",
-      "Copywriting orientato alla vendita",
-      "Script strategici per contenuti e ads",
-      "Strategia di contenuto (Criterio / Vínculo / Autorità)",
-      "Direzione creativa video",
-      "Analisi competitor e trend",
-      "Struttura di sistemi di vendita",
-      "Meta Ads (struttura, lancio, ottimizzazione)",
-      "Testing creativo",
-      "Scalabilità delle campagne",
-    ],
-    es: [
-      "Análisis profundo del mercado (deseo, problema, objeciones)",
-      "Identificación de \"mass desire\" (Breakthrough Advertising)",
-      "Construcción de propuesta de valor",
-      "Desarrollo de ángulos de venta",
-      "Creación de hooks de alto impacto (UGC + Ads)",
-      "Copywriting basado en ventas (no creativo vacío)",
-      "Estructuración de guiones estratégicos",
-      "Estrategia de contenido (Criterio / Vínculo / Autoridad)",
-      "Dirección creativa para videos (UGC / Ads)",
-      "Análisis de competencia y tendencias",
-      "Diseño de sistemas de venta (no contenido aislado)",
-      "Estructuración de campañas Meta Ads",
-      "Optimización de conversión",
-      "Testing creativo (hooks, formatos, mensajes)",
-      "Escalado de campañas (horizontal y vertical)",
-    ],
-  },
+  // Competenze — 4 blocks grid
+  competenceBlocks: [
+    {
+      icon: "🧠",
+      title: { it: "Analisi & Strategia", es: "Análisis & Estrategia" } as BilingualText,
+      items: {
+        it: [
+          "Analisi del mercato e del desiderio",
+          "Analisi competitor e trend",
+          "Identificazione del \u201Cmass desire\u201D",
+          "Costruzione della proposta di valore",
+        ],
+        es: [
+          "Análisis del mercado y del deseo",
+          "Análisis de competencia y tendencias",
+          "Identificación del \u201Cmass desire\u201D",
+          "Construcción de la propuesta de valor",
+        ],
+      },
+    },
+    {
+      icon: "🎯",
+      title: { it: "Messaggio & Copy", es: "Mensaje & Copy" } as BilingualText,
+      items: {
+        it: [
+          "Sviluppo degli angoli di vendita",
+          "Copywriting orientato alla vendita",
+          "Struttura dei messaggi",
+          "Eliminazione delle obiezioni",
+        ],
+        es: [
+          "Desarrollo de ángulos de venta",
+          "Copywriting orientado a la conversión",
+          "Estructura de mensajes",
+          "Eliminación de objeciones",
+        ],
+      },
+    },
+    {
+      icon: "🎥",
+      title: { it: "Contenuti & Creatività", es: "Contenido & Creatividad" } as BilingualText,
+      items: {
+        it: [
+          "Creazione di hook ad alto impatto",
+          "Script strategici per contenuti e ads",
+          "Strategia di contenuto (Criterio / Vincolo / Autorità)",
+          "Direzione creativa video",
+        ],
+        es: [
+          "Creación de hooks de alto impacto",
+          "Guiones estratégicos para contenido y ads",
+          "Estrategia de contenido (Criterio / Vínculo / Autoridad)",
+          "Dirección creativa para video",
+        ],
+      },
+    },
+    {
+      icon: "🚀",
+      title: { it: "Ads & Performance", es: "Ads & Performance" } as BilingualText,
+      items: {
+        it: [
+          "Struttura e gestione campagne Meta Ads",
+          "Testing creativo (hook, formati, messaggi)",
+          "Ottimizzazione della conversione",
+          "Scalabilità delle campagne",
+        ],
+        es: [
+          "Estructura y gestión de campañas Meta Ads",
+          "Testing creativo (hooks, formatos, mensajes)",
+          "Optimización de conversión",
+          "Escalado de campañas",
+        ],
+      },
+    },
+  ],
 
   // Featured system + 3 individual services
   sistemaCompleto: {
@@ -220,7 +260,7 @@ export const siteConfig = {
     },
     {
       number: "04",
-      title: { it: "Fidelizzazione e Scaling", es: "Ascensión" } as BilingualText,
+      title: { it: "Fidelizzazione e Scaling", es: "Fidelización y Escala" } as BilingualText,
       description: {
         it: "Fidelizzazione e aumento del valore del cliente.",
         es: "Se aumenta el valor del cliente mediante continuidad, recompra y fidelización.",
@@ -232,6 +272,26 @@ export const siteConfig = {
     es: "Este sistema conecta contenido + publicidad + ventas en un solo flujo.",
   } as BilingualText,
 
+  // Portfolio — Adoro Florencia case
+  caseStudies: [
+    {
+      slug: "adoro-florencia",
+      name: "Adoro Florencia",
+      tagline: {
+        it: "B&B boutique nel cuore di Firenze",
+        es: "B&B boutique en el corazón de Florencia",
+      } as BilingualText,
+      location: "Firenze, Italia",
+      status: "in-progress",
+      logo: "/bnb/adoro-florencia-logo.jpg",
+      images: ["/bnb/1.jpg", "/bnb/2.jpg", "/bnb/3.jpg"],
+      description: {
+        it: "Progetto in corso. Strategia di contenuti + advertising per un B&B a Firenze. Risultati in aggiornamento.",
+        es: "Proyecto en curso. Estrategia de contenido + publicidad para un B&B en Florencia. Resultados en actualización.",
+      } as BilingualText,
+    },
+  ],
+
   portfolio: {
     comingSoon: {
       it: "I miei primi progetti sono in corso. Vuoi essere il prossimo?",
@@ -241,8 +301,8 @@ export const siteConfig = {
 
   cta: {
     title: {
-      it: "Analizziamo il tuo brand",
-      es: "Analizamos tu marca",
+      it: "Analizziamo il tuo business",
+      es: "Analicemos tu negocio",
     } as BilingualText,
     description: {
       it: "Che tu abbia bisogno di strategia, contenuti, ads o un sistema completo — sono qui per generare risultati.",
@@ -255,10 +315,9 @@ export const siteConfig = {
   },
 
   social: {
-    email: "Drusilamiranda.creator@gmail.com",
-    instagram: "https://instagram.com/drusilla_miranda",
-    tiktok: "https://tiktok.com/@pameladlcm",
-    linktree: "https://linktr.ee/DrusilaMiranda",
+    email: "drusilamiranda.creator@gmail.com",
+    instagram: "https://instagram.com/drusila.miranda",
+    tiktok: "https://tiktok.com/@xica.bella",
     whatsapp: "https://wa.me/393898853199",
   },
 };

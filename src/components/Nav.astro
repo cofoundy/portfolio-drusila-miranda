@@ -4,29 +4,27 @@ import { siteConfig } from "../config";
 
 <!-- Floating pill nav — appears on scroll -->
 <nav id="floating-nav" class="fixed top-0 left-1/2 -translate-x-1/2 z-50 hidden opacity-0">
-  <div class="mt-4 px-6 py-3 rounded-full border border-[var(--color-primary-light)]/30 bg-[var(--color-surface-light)]/90 backdrop-blur-md shadow-lg flex items-center gap-6">
-    <a href="#" class="font-['Playfair_Display',serif] font-bold text-[var(--color-primary-dark)] text-sm">DM</a>
+  <div class="mt-4 px-6 py-3 rounded-full border border-white/15 bg-black/85 backdrop-blur-md shadow-lg shadow-black/50 flex items-center gap-6">
+    <a href="#" class="italic font-bold text-[var(--color-accent)] text-sm" style="font-family: 'Playfair Display', serif;">DM</a>
 
-    <div class="hidden sm:flex items-center gap-4 text-sm text-[var(--color-primary)]">
-      <a href="#servizi" class="link-underline hover:text-[var(--color-primary-dark)] transition-colors" data-lang data-it="Servizi" data-es="Servicios">Servizi</a>
-      <a href="#metodo" class="link-underline hover:text-[var(--color-primary-dark)] transition-colors" data-lang data-it="Metodo" data-es="Método">Metodo</a>
-      <a href="#portfolio" class="link-underline hover:text-[var(--color-primary-dark)] transition-colors">Portfolio</a>
-      <a href="#contatto" class="link-underline hover:text-[var(--color-primary-dark)] transition-colors" data-lang data-it="Contatto" data-es="Contacto">Contatto</a>
+    <div class="hidden sm:flex items-center gap-4 text-sm text-white/75" style="font-family: 'Montserrat', sans-serif;">
+      <a href="#servizi" class="hover:text-[var(--color-accent)] transition-colors" data-lang data-it="Servizi" data-es="Servicios">Servizi</a>
+      <a href="#metodo" class="hover:text-[var(--color-accent)] transition-colors" data-lang data-it="Metodo" data-es="Método">Metodo</a>
+      <a href="#portfolio" class="hover:text-[var(--color-accent)] transition-colors">Portfolio</a>
+      <a href="#contatto" class="hover:text-[var(--color-accent)] transition-colors" data-lang data-it="Contatto" data-es="Contacto">Contatto</a>
     </div>
 
     <!-- Language Toggle -->
-    <button id="lang-toggle" class="ml-2 flex items-center gap-1 text-xs font-semibold border border-[var(--color-primary-light)]/40 rounded-full px-3 py-1 hover:border-[var(--color-accent)] transition-colors">
+    <button id="lang-toggle" class="ml-2 flex items-center gap-1 text-xs font-semibold border border-white/25 rounded-full px-3 py-1 hover:border-[var(--color-accent)] transition-colors" style="font-family: 'Montserrat', sans-serif;">
       <span id="lang-label-it" class="text-[var(--color-accent)]">IT</span>
-      <span class="text-[var(--color-primary-light)]">/</span>
-      <span id="lang-label-es" class="text-[var(--color-primary)]">ES</span>
+      <span class="text-white/40">/</span>
+      <span id="lang-label-es" class="text-white/70">ES</span>
     </button>
   </div>
 </nav>
 
 <script>
-  // Floating nav visibility
   const nav = document.getElementById('floating-nav');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
@@ -37,10 +35,8 @@ import { siteConfig } from "../config";
       nav?.classList.add('hidden');
       nav?.classList.remove('header-visible');
     }
-    lastScroll = scrollY;
   });
 
-  // Language toggle
   let currentLang: 'it' | 'es' = 'it';
   const langToggle = document.getElementById('lang-toggle');
   const langLabelIt = document.getElementById('lang-label-it');
@@ -52,7 +48,6 @@ import { siteConfig } from "../config";
     setTimeout(() => {
       currentLang = currentLang === 'it' ? 'es' : 'it';
 
-      // Update all bilingual elements
       document.querySelectorAll('[data-lang]').forEach(el => {
         const itText = el.getAttribute('data-it');
         const esText = el.getAttribute('data-es');
@@ -61,19 +56,12 @@ import { siteConfig } from "../config";
         }
       });
 
-      // Update toggle labels
       if (langLabelIt && langLabelEs) {
-        langLabelIt.className = currentLang === 'it'
-          ? 'text-[var(--color-accent)]'
-          : 'text-[var(--color-primary)]';
-        langLabelEs.className = currentLang === 'es'
-          ? 'text-[var(--color-accent)]'
-          : 'text-[var(--color-primary)]';
+        langLabelIt.className = currentLang === 'it' ? 'text-[var(--color-accent)]' : 'text-white/70';
+        langLabelEs.className = currentLang === 'es' ? 'text-[var(--color-accent)]' : 'text-white/70';
       }
 
-      // Update html lang
       document.documentElement.lang = currentLang;
-
       document.body.classList.remove('lang-switching');
     }, 200);
   });

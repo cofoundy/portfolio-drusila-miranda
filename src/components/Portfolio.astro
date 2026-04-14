@@ -1,58 +1,78 @@
 ---
 import { siteConfig } from "../config";
 
-// Categories she works in (from Linktree + WhatsApp)
-const categories = [
-  { label: { it: "B&B & Hospitality", es: "B&B & Hospitalidad" }, status: "wip" },
-  { label: { it: "Food & Lifestyle", es: "Food & Lifestyle" }, status: "soon" },
-  { label: { it: "Beauty & Wellness", es: "Belleza & Bienestar" }, status: "soon" },
-];
+const cases = siteConfig.caseStudies || [];
 ---
 
-<section id="portfolio" class="pt-10 pb-20 md:pt-14 md:pb-28 bg-white relative">
-  <div class="max-w-5xl mx-auto px-6">
+<section id="portfolio" class="py-20 md:py-28 bg-black relative">
+  <!-- Subtle accent glow -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--color-accent)]/5 blur-3xl rounded-full pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 relative">
     <!-- Section header -->
     <div class="text-center mb-14 reveal">
-      <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3">Portfolio</p>
-      <h2 class="font-['Playfair_Display',serif] text-3xl md:text-4xl font-bold text-[var(--color-primary-dark)]" data-lang data-it="Casi di Studio" data-es="Casos de Estudio">Casi di Studio</h2>
-      <div class="w-16 h-0.5 bar-shimmer rounded-full mx-auto mt-4"></div>
+      <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" style="font-family: 'Montserrat', sans-serif;">Portfolio</p>
+      <h2 class="text-3xl md:text-4xl text-white" style="font-family: 'Montserrat', sans-serif; font-weight: 700;" data-lang data-it="Casi di Studio" data-es="Casos de Estudio">
+        Casi di <span class="italic font-normal text-[var(--color-accent)]" style="font-family: 'Playfair Display', serif; font-weight: 500;">Studio</span>
+      </h2>
+      <div class="w-16 h-0.5 bg-[var(--color-accent)] rounded-full mx-auto mt-4"></div>
     </div>
 
-    <!-- Category cards grid -->
-    <div class="grid sm:grid-cols-3 gap-6 mb-12 reveal stagger-1">
-      {categories.map((cat) => (
-        <div class="group relative bg-[var(--color-surface)] rounded-2xl p-8 text-center border border-[var(--color-primary-light)]/10 hover:border-[var(--color-accent)]/30 transition-all duration-300">
-          <!-- Status badge -->
-          <div class="inline-flex items-center gap-1.5 bg-white rounded-full px-3 py-1 mb-5">
-            <span class={`w-2 h-2 rounded-full ${cat.status === 'wip' ? 'bg-[var(--color-accent)] animate-pulse' : 'bg-[var(--color-primary-light)]/40'}`}></span>
-            <span class="text-[10px] tracking-[0.15em] uppercase text-[var(--color-primary)] font-medium">
-              {cat.status === 'wip' ? 'In Progress' : 'Coming Soon'}
-            </span>
-          </div>
+    {cases.map((cs: any) => (
+      <div class="reveal mb-10">
+        <div class="bg-white/[0.03] backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden">
+          <div class="grid md:grid-cols-5 gap-0">
+            <!-- Logo + info -->
+            <div class="md:col-span-2 p-8 md:p-10 flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/10">
+              <div>
+                <!-- Status badge -->
+                <div class="inline-flex items-center gap-1.5 bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 rounded-full px-3 py-1 mb-5">
+                  <span class="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
+                  <span class="text-[10px] tracking-[0.15em] uppercase text-[var(--color-accent)] font-medium" style="font-family: 'Montserrat', sans-serif;" data-lang data-it="In corso" data-es="En curso">In corso</span>
+                </div>
 
-          <!-- Category icon placeholder (decorative) -->
-          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-white flex items-center justify-center">
-            <div class="w-8 h-8 border-2 border-dashed border-[var(--color-primary-light)]/30 rounded-lg flex items-center justify-center">
-              <span class="text-[var(--color-accent)] text-lg">✦</span>
+                <!-- Logo -->
+                <div class="bg-white rounded-xl p-6 mb-5 flex items-center justify-center">
+                  <img src={cs.logo} alt={cs.name} class="max-h-28 w-auto object-contain" loading="lazy" />
+                </div>
+
+                <h3 class="text-2xl font-bold text-white mb-2" style="font-family: 'Montserrat', sans-serif;">{cs.name}</h3>
+                <p class="italic text-[var(--color-accent)] mb-4" style="font-family: 'Playfair Display', serif;" data-lang data-it={cs.tagline.it} data-es={cs.tagline.es}>
+                  {cs.tagline.it}
+                </p>
+                <p class="text-sm text-white/70 leading-relaxed mb-4" style="font-family: 'Montserrat', sans-serif; font-weight: 300;" data-lang data-it={cs.description.it} data-es={cs.description.es}>
+                  {cs.description.it}
+                </p>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-white/50 pt-4 border-t border-white/10">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span style="font-family: 'Montserrat', sans-serif;">{cs.location}</span>
+              </div>
+            </div>
+
+            <!-- Screenshots grid -->
+            <div class="md:col-span-3 p-6 md:p-8 bg-black/40">
+              <div class="grid grid-cols-3 gap-3 h-full">
+                {cs.images.map((img: string, i: number) => (
+                  <div class="relative rounded-lg overflow-hidden aspect-[9/16] border border-white/10 group">
+                    <img src={img} alt={`${cs.name} ${i + 1}`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-
-          <!-- Category name -->
-          <h3 class="font-['Playfair_Display',serif] text-lg font-bold text-[var(--color-primary-dark)]" data-lang data-it={cat.label.it} data-es={cat.label.es}>
-            {cat.label.it}
-          </h3>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
 
     <!-- Bottom CTA -->
     <div class="text-center reveal stagger-2">
-      <div class="inline-flex items-center gap-3 bg-[var(--color-surface)] rounded-full px-6 py-3">
+      <div class="inline-flex items-center gap-3 bg-white/[0.03] border border-white/10 rounded-full px-6 py-3">
         <div class="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse"></div>
-        <p class="text-sm text-[var(--color-primary)]" data-lang data-it="I miei primi progetti sono in corso. Vuoi essere il prossimo?" data-es="Mis primeros proyectos están en curso. ¿Quieres ser el próximo?">
-          I miei primi progetti sono in corso. Vuoi essere il prossimo?
+        <p class="text-sm text-white/80" style="font-family: 'Montserrat', sans-serif;" data-lang data-it={siteConfig.portfolio.comingSoon.it} data-es={siteConfig.portfolio.comingSoon.es}>
+          {siteConfig.portfolio.comingSoon.it}
         </p>
-        <a href="#contatto" class="text-[var(--color-accent)] font-semibold text-sm hover:underline" data-lang data-it="Contattami →" data-es="Contáctame →">Contattami →</a>
+        <a href="#contatto" class="text-[var(--color-accent)] font-semibold text-sm hover:underline" style="font-family: 'Montserrat', sans-serif;" data-lang data-it="Contattami →" data-es="Contáctame →">Contattami →</a>
       </div>
     </div>
   </div>

@@ -2,82 +2,60 @@
 import { siteConfig } from "../config";
 ---
 
-<section id="chi-sono" class="pt-10 pb-20 md:pt-14 md:pb-28 bg-white relative overflow-hidden">
-  <!-- Decorative: large faded quote mark -->
-  <div class="absolute top-8 right-8 md:right-16 font-['Playfair_Display',serif] text-[200px] md:text-[300px] leading-none text-[var(--color-surface)] select-none pointer-events-none">"</div>
+<section id="chi-sono" class="pt-20 pb-20 md:pt-24 md:pb-28 bg-black relative overflow-hidden">
+  <!-- Subtle gold glow -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--color-accent)]/5 blur-3xl rounded-full pointer-events-none"></div>
 
   <div class="max-w-5xl mx-auto px-6 relative">
-    <div class="grid md:grid-cols-12 gap-8 md:gap-12">
-      <!-- Label column -->
-      <div class="md:col-span-3 reveal-left">
-        <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" data-lang data-it="Chi Sono" data-es="Sobre Mí">Chi Sono</p>
-        <div class="w-12 h-0.5 bar-shimmer rounded-full mb-6"></div>
+    <!-- Chi Sono -->
+    <div class="mb-20">
+      <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+        <div class="md:col-span-4 reveal-left">
+          <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" style="font-family: 'Montserrat', sans-serif;" data-lang data-it="Chi Sono" data-es="Quién Soy">Chi Sono</p>
+          <div class="w-12 h-0.5 bg-[var(--color-accent)] rounded-full mb-6"></div>
 
-        <!-- Mini stats -->
-        <div class="space-y-4 mt-8">
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-[var(--color-surface)] flex items-center justify-center">
-              <span class="text-xs">🇵🇪</span>
-            </div>
-            <span class="text-xs text-[var(--color-primary)]" data-lang data-it="Peruviana di nascita" data-es="Peruana de nacimiento">Peruviana di nascita</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-[var(--color-surface)] flex items-center justify-center">
-              <span class="text-xs">🇮🇹</span>
-            </div>
-            <span class="text-xs text-[var(--color-primary)]" data-lang data-it="Basata in Italia" data-es="Basada en Italia">Basata in Italia</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-[var(--color-surface)] flex items-center justify-center">
-              <span class="text-xs">✦</span>
-            </div>
-            <span class="text-xs text-[var(--color-primary)]" data-lang data-it="Contenuti & Strategia" data-es="Contenido & Estrategia">Contenuti & Strategia</span>
-          </div>
+          <h2 class="text-3xl md:text-4xl text-white leading-tight" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">
+            Drusila<br/>
+            <span class="italic font-normal text-[var(--color-accent)]" style="font-family: 'Playfair Display', serif; font-weight: 500;">Miranda</span>
+          </h2>
+        </div>
+
+        <div class="md:col-span-8 reveal stagger-1">
+          <p class="text-white/80 leading-relaxed text-base md:text-lg" style="font-family: 'Montserrat', sans-serif; font-weight: 300;" data-lang data-it={siteConfig.about.it} data-es={siteConfig.about.es}>
+            {siteConfig.about.it}
+          </p>
         </div>
       </div>
+    </div>
 
-      <!-- Bio + Specialization column -->
-      <div class="md:col-span-9">
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Bio -->
-          <div class="reveal stagger-1">
-            <p class="text-[var(--color-primary-dark)]/80 leading-relaxed text-[15px]" data-lang data-it={siteConfig.about.it} data-es={siteConfig.about.es}>
-              {siteConfig.about.it}
-            </p>
-          </div>
-
-          <!-- Quote card -->
-          <div class="reveal-right stagger-2">
-            <div class="bg-[var(--color-surface)] rounded-2xl p-8 relative">
-              <div class="absolute top-4 left-6 font-['Playfair_Display',serif] text-5xl text-[var(--color-accent)]/20 leading-none">"</div>
-              <blockquote class="relative pt-6">
-                <p class="font-['Playfair_Display',serif] italic text-lg text-[var(--color-primary-dark)] leading-relaxed" data-lang data-it={siteConfig.quote.it} data-es={siteConfig.quote.es}>
-                  {siteConfig.quote.it}
-                </p>
-                <cite class="block mt-4 text-sm text-[var(--color-accent)] not-italic font-medium">— {siteConfig.name}</cite>
-              </blockquote>
-            </div>
-          </div>
+    <!-- Specializzazione -->
+    <div class="reveal stagger-2">
+      <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+        <div class="md:col-span-4">
+          <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" style="font-family: 'Montserrat', sans-serif;" data-lang data-it="Specializzazione" data-es="Especialidad">Specializzazione</p>
+          <div class="w-12 h-0.5 bg-[var(--color-accent)] rounded-full mb-6"></div>
         </div>
 
-        <!-- Specialization -->
-        <div class="mt-12 reveal stagger-3">
-          <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-4" data-lang data-it="Specializzazione" data-es="Especialidad">Specializzazione</p>
-
-          <p class="text-[var(--color-primary-dark)]/80 leading-relaxed text-[15px] mb-6" data-lang data-it={siteConfig.specialization.description.it} data-es={siteConfig.specialization.description.es}>
+        <div class="md:col-span-8">
+          <p class="text-white/80 leading-relaxed text-[15px] md:text-base mb-6" style="font-family: 'Montserrat', sans-serif; font-weight: 300;" data-lang data-it={siteConfig.specialization.description.it} data-es={siteConfig.specialization.description.es}>
             {siteConfig.specialization.description.it}
           </p>
 
-          <ul class="grid sm:grid-cols-2 gap-3 mb-6">
+          <p class="text-white/60 text-sm mb-4 tracking-wide uppercase" style="font-family: 'Montserrat', sans-serif; font-weight: 500; letter-spacing: 0.1em;" data-lang data-it={siteConfig.specialization.intro.it} data-es={siteConfig.specialization.intro.es}>
+            {siteConfig.specialization.intro.it}
+          </p>
+
+          <ul class="grid sm:grid-cols-2 gap-3 mb-8">
             {siteConfig.specialization.items.it.map((item: string, i: number) => (
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0"></span>
-                <span class="text-sm text-[var(--color-primary-dark)]/70" data-lang data-it={siteConfig.specialization.items.it[i]} data-es={siteConfig.specialization.items.es[i]}>{item}</span>
+                <span class="text-sm text-white/80" style="font-family: 'Montserrat', sans-serif;" data-lang data-it={siteConfig.specialization.items.it[i]} data-es={siteConfig.specialization.items.es[i]}>{item}</span>
               </li>
             ))}
           </ul>
 
-          <p class="font-['Playfair_Display',serif] italic text-sm text-[var(--color-primary)] border-l-2 border-[var(--color-accent)]/30 pl-4" data-lang data-it={siteConfig.specialization.closing.it} data-es={siteConfig.specialization.closing.es}>
+          <!-- Closing phrase in Playfair italic, highlighted -->
+          <p class="italic text-lg md:text-xl text-[var(--color-accent)] border-l-2 border-[var(--color-accent)]/60 pl-5 leading-relaxed" style="font-family: 'Playfair Display', serif;" data-lang data-it={siteConfig.specialization.closing.it} data-es={siteConfig.specialization.closing.es}>
             {siteConfig.specialization.closing.it}
           </p>
         </div>

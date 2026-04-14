@@ -2,21 +2,41 @@
 import { siteConfig } from "../config";
 ---
 
-<section id="competenze" class="py-20 md:py-28 bg-[var(--color-surface-light)] relative">
-  <div class="max-w-5xl mx-auto px-6">
+<section id="competenze" class="py-20 md:py-28 bg-black relative">
+  <!-- Subtle accent glow -->
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-[var(--color-accent)]/5 blur-3xl rounded-full pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 relative">
     <!-- Section header -->
-    <div class="text-center mb-12 reveal">
-      <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" data-lang data-it="Competenze" data-es="Habilidades">Competenze</p>
-      <h2 class="font-['Playfair_Display',serif] text-3xl md:text-4xl font-bold text-[var(--color-primary-dark)]" data-lang data-it="Livello Strategico" data-es="Nivel Estratégico">Livello Strategico</h2>
-      <div class="w-16 h-0.5 bar-shimmer rounded-full mx-auto mt-4"></div>
+    <div class="text-center mb-14 reveal">
+      <p class="text-[var(--color-accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3" style="font-family: 'Montserrat', sans-serif;" data-lang data-it="Competenze Strategiche" data-es="Competencias Estratégicas">Competenze Strategiche</p>
+      <h2 class="text-3xl md:text-4xl text-white" style="font-family: 'Montserrat', sans-serif; font-weight: 700;" data-lang data-it="Come lavoro" data-es="Cómo trabajo">
+        Come <span class="italic font-normal text-[var(--color-accent)]" style="font-family: 'Playfair Display', serif; font-weight: 500;">lavoro</span>
+      </h2>
+      <div class="w-16 h-0.5 bg-[var(--color-accent)] rounded-full mx-auto mt-4"></div>
     </div>
 
-    <!-- Skills grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-      {siteConfig.skills.it.map((skill: string, i: number) => (
-        <div class={`reveal stagger-${Math.min((i % 6) + 1, 6)} group flex items-start gap-3 bg-white rounded-xl px-5 py-4 border border-[var(--color-primary-light)]/10 hover:border-[var(--color-accent)]/30 transition-all duration-300`}>
-          <span class="mt-0.5 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0 group-hover:scale-125 transition-transform"></span>
-          <span class="text-sm text-[var(--color-primary-dark)]/80" data-lang data-it={siteConfig.skills.it[i]} data-es={siteConfig.skills.es[i] || skill}>{skill}</span>
+    <!-- 4-block grid: 2x2 desktop, stacked mobile -->
+    <div class="grid sm:grid-cols-2 gap-5 md:gap-6">
+      {siteConfig.competenceBlocks.map((block, i) => (
+        <div class={`reveal stagger-${(i % 4) + 1} group bg-white/[0.03] backdrop-blur-sm rounded-2xl p-7 border border-white/10 hover:border-[var(--color-accent)]/40 transition-all duration-500`}>
+          <!-- Icon + Title -->
+          <div class="flex items-center gap-3 mb-5 pb-4 border-b border-white/10">
+            <span class="text-2xl">{block.icon}</span>
+            <h3 class="text-lg font-bold text-white" style="font-family: 'Montserrat', sans-serif;" data-lang data-it={block.title.it} data-es={block.title.es}>
+              {block.title.it}
+            </h3>
+          </div>
+
+          <!-- Items -->
+          <ul class="space-y-2.5">
+            {block.items.it.map((item: string, j: number) => (
+              <li class="flex items-start gap-2.5">
+                <span class="mt-2 w-1 h-1 rounded-full bg-[var(--color-accent)] shrink-0"></span>
+                <span class="text-sm text-white/75 leading-relaxed" style="font-family: 'Montserrat', sans-serif; font-weight: 300;" data-lang data-it={block.items.it[j]} data-es={block.items.es[j]}>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>

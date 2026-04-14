@@ -19,6 +19,7 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={siteConfig.description.it} />
+    <meta name="theme-color" content="#000000" />
 
     <!-- Open Graph -->
     <meta property="og:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
@@ -26,78 +27,26 @@ import "../styles/global.css";
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://drusila-miranda.cofoundy.dev/og.jpg" />
 
-    <!-- Fonts: Playfair Display + Inter -->
+    <!-- Fonts: Montserrat (primary) + Playfair Display (accent) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
       rel="stylesheet"
     />
 
     <title>{siteConfig.name} — {siteConfig.title}</title>
   </head>
-  <body class="bg-[var(--color-surface-light)]">
+  <body class="bg-black text-white" style="font-family: 'Montserrat', sans-serif;">
     <Nav />
-    <main>
+    <main class="bg-black">
       <Hero />
-
-      <!-- Hero → About: gold accent divider -->
-      <div class="relative h-24 bg-white">
-        <div class="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-[var(--color-surface)] to-white"></div>
-        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-4">
-          <div class="w-16 h-px bg-gradient-to-r from-transparent to-[var(--color-accent)]/40"></div>
-          <div class="w-2 h-2 rotate-45 bg-[var(--color-accent)]/30"></div>
-          <div class="w-16 h-px bg-gradient-to-l from-transparent to-[var(--color-accent)]/40"></div>
-        </div>
-      </div>
-
       <About />
-
-      <!-- About → Skills: subtle blend -->
-      <div class="h-12 bg-gradient-to-b from-white to-[var(--color-surface-light)]"></div>
-
       <Skills />
-
-      <!-- Skills → Services: blend -->
-      <div class="h-12 bg-gradient-to-b from-[var(--color-surface-light)] to-[var(--color-surface)]"></div>
-
       <Services />
-
-      <!-- Services → Method: dramatic light-to-dark transition -->
-      <div class="relative h-32">
-        <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-surface)] via-[#3a3028] to-[var(--color-primary-dark)]"></div>
-        <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-center">
-          <div class="flex items-center gap-3">
-            <div class="w-20 h-px bg-gradient-to-r from-transparent to-[var(--color-accent)]/50"></div>
-            <div class="w-2.5 h-2.5 rotate-45 border border-[var(--color-accent)]/50"></div>
-            <div class="w-20 h-px bg-gradient-to-l from-transparent to-[var(--color-accent)]/50"></div>
-          </div>
-        </div>
-      </div>
-
       <Method />
-
-      <!-- Method → Portfolio: dark-to-light transition -->
-      <div class="relative h-32">
-        <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-primary-dark)] via-[#3a3028] to-white"></div>
-        <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-center">
-          <div class="flex items-center gap-3">
-            <div class="w-20 h-px bg-gradient-to-r from-transparent to-[var(--color-accent)]/50"></div>
-            <div class="w-2.5 h-2.5 rotate-45 border border-[var(--color-accent)]/50"></div>
-            <div class="w-20 h-px bg-gradient-to-l from-transparent to-[var(--color-accent)]/50"></div>
-          </div>
-        </div>
-      </div>
-
       <Portfolio />
-
-      <!-- Portfolio → Contact: soft blend -->
-      <div class="h-16 bg-gradient-to-b from-white to-[var(--color-surface)]"></div>
-
       <Contact />
-
-      <!-- Contact → Footer: blend to dark -->
-      <div class="h-16 bg-gradient-to-b from-[var(--color-surface)] to-[var(--color-primary-dark)]"></div>
     </main>
     <Footer />
 
