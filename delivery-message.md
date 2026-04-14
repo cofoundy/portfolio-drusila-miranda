@@ -1,18 +1,15 @@
-# Delivery Message — Drusila Miranda
-**WhatsApp:** +39 389 885 3199
-**Tier:** Premium (S/.280)
-**URL:** https://drusila-miranda.cofoundy.dev
+Drusila, listo! Aplicamos todos los cambios que mandaste 🙌
 
----
+✅ Tipografía nueva: Montserrat (principal) + Playfair Display italic (para "Miranda" y frases clave)
+✅ Hero: foto profesional nueva + cambio de "UGC Content" a "Performance Marketing"
+✅ Chi Sono: quitamos los 3 badges (incluido "basata") y la cita tachada
+✅ Specializzazione: reescrita con "Il mio approccio si basa su:" y la frase "Non lavoro con supposizioni" destacada en Playfair italic
+✅ Competenze: reestructuradas en 4 bloques tipo grid (Analisi & Strategia / Messaggio & Copy / Contenuti & Creatività / Ads & Performance)
+✅ Metodologia: 4 pasos (Presentazione → Valutazione → Conversione → Fidelizzazione e Scaling)
+✅ Casos: agregamos Adoro Florencia (B&B in Firenze) con logo + capturas de las cuentas, con badge "In corso"
+✅ Contacto: IG @drusila.miranda, TikTok @xica.bella, email y WhatsApp actualizados
+✅ Todo en fondo negro, letras blancas + dorado tenue (sin más alternancia beige)
 
-Hola Drusila! La primera versión de tu portfolio ya está en vivo 🥳
+Revísalo aquí 👉 https://drusila-miranda.cofoundy.dev
 
-🌐 https://drusila-miranda.cofoundy.dev
-
-Incluye toggle de idioma IT/ES en la navegación, tus 3 servicios (Strategia Creativa, UGC Content, Meta Ads), tu método de trabajo y sección de contacto con WhatsApp 😊
-
-Tu plan Premium incluye revisiones ilimitadas — revísalo y me dices qué te gustaría ajustar ✌️
-
-Sobre el dominio: drusilamiranda.com está disponible y está incluido en tu plan Premium (primer año cubierto). Cuando apruebes el diseño lo configuramos!
-
-Tu guía con todo lo que incluye: https://drusila-miranda.cofoundy.dev/guia.pdf ✌️
+Cuando tengas resultados del B&B nos los mandas y los agregamos al caso. Y cuando quieras coordinamos el dominio drusilamiranda.com que está incluido en tu plan.

@@ -2,7 +2,7 @@ type BilingualText = { it: string; es: string };
 
 export const siteConfig = {
   name: "Drusila Miranda",
-  title: "Creative Marketing Strategist & Meta Ads Specialist",
+  title: "Performance Marketing Strategist & Meta Ads Specialist",
   defaultLang: "it" as "it" | "es",
 
   description: {
@@ -10,13 +10,13 @@ export const siteConfig = {
     es: "Drusila Miranda — Estrategia creativa, contenido y Meta Ads para convertir atención en conversaciones y ventas.",
   } as BilingualText,
 
-  // All-black theme: bg negro, texto blanco, amarillo tenue como acento
-  accentColor: "#D4AF37",
+  // All-black theme: bg negro, texto blanco, amarillo pastel como acento
+  accentColor: "#F2D675",
   colors: {
     primaryDark: "#000000",
     primary: "#F5F5F5",
     primaryLight: "#A8A8A8",
-    accent: "#D4AF37",
+    accent: "#F2D675",
     surface: "#0A0A0A",
     surfaceLight: "#111111",
   },
