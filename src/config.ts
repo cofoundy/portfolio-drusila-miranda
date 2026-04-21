@@ -41,7 +41,7 @@ export const siteConfig = {
   specialization: {
     description: {
       it: "Progetto sistemi di marketing dove contenuti + messaggio + advertising lavorano insieme per vendere.",
-      es: "Diseño sistemas de marketing donde contenido + mensaje + publicidad trabajan juntos para generar ventas.",
+      es: "Diseño sistemas de marketing donde el contenido, el mensaje y la publicidad trabajan juntos para generar ventas.",
     } as BilingualText,
     intro: {
       it: "Il mio approccio si basa su:",
@@ -57,7 +57,7 @@ export const siteConfig = {
       es: [
         "Psicología del consumidor",
         "Análisis del mercado y del deseo",
-        "Estrategia creativa aplicada a contenido y anuncios",
+        "Estrategia creativa aplicada al contenido y a los anuncios",
         "Ejecución en Meta Ads orientada a resultados",
       ],
     },
@@ -318,6 +318,6 @@ export const siteConfig = {
     email: "drusilamiranda.creator@gmail.com",
     instagram: "https://instagram.com/drusila.miranda",
     tiktok: "https://tiktok.com/@xica.bella",
-    whatsapp: "https://wa.me/393898853199",
+    whatsapp: "https://wa.me/393936695679",
   },
 };
